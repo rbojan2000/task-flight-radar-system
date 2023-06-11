@@ -15,5 +15,6 @@ public class Test {
     private String activity;
     private String detailsPage;
     private String detailsButton;
+    private Double totalOfThis;
 
 }

@@ -39,3 +39,10 @@ services:
     working_dir: /scripts
     volumes:
       - ./scripts:/scripts
+      
+  flight-radar:
+    build: ../test-listener/
+    container_name: test-listener
+    restart: always
+    depends_on:
+      - kafka

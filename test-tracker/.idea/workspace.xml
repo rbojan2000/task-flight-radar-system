@@ -5,20 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="858403c6-4198-476e-8103-8bb74eb1dc66" name="Changes" comment="Added producer">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/create-topics.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/topology/TestTopology.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TopologyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test-listener/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-listener/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../test-listener/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-listener/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test-listener/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test-listener/src/main/java/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/actions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../test-listener/src/main/resources/actions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../test-listener/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BankBalance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BankTransaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/topology/BankBalanceTopology.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/topology/TestTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/topology/TestTopology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,10 +50,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/bojan/Desktop/kafka/test/test-listener",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "/home/bojan/Desktop/kafka/voice-command-parser",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -65,7 +67,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="JUnit.TopologyTest">
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="test-tracker" />
@@ -80,12 +82,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TopologyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test-tracker" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TopologyTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TopologyTest.testTopology" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test-tracker" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TopologyTest" />
+      <option name="METHOD_NAME" value="testTopology" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.Runner" />
+      <item itemvalue="JUnit.TopologyTest" />
+      <item itemvalue="JUnit.TopologyTest.testTopology" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TopologyTest" />
+        <item itemvalue="JUnit.TopologyTest.testTopology" />
         <item itemvalue="Application.Runner" />
       </list>
     </recent_temporary>
@@ -134,8 +159,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/topology/TestTopology.java</url>
-          <line>16</line>
+          <line>25</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TopologyTest.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

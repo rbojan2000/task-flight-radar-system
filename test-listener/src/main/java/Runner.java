@@ -1,18 +1,13 @@
 import configuration.Configuration;
 import model.Test;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import parser.TestParser;
 import producer.TestProducer;
 
 import java.io.IOException;
-
 import java.util.List;
 import java.util.Properties;
 
 public class Runner {
-
-    private static final Logger logger = LogManager.getLogger(Runner.class);
 
     public static void main(String[] args) {
         try {

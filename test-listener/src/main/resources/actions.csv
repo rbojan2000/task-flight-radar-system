@@ -1,5 +1,5 @@
 1,1,1621520462,click,home,register
 2,1,1621520475,click,home,login
-3,2,1621520481,click,product,add_to_cart
-4,3,1621520499,click,home,register
-5,2,1621520505,click,home,login
+3,1,1621520481,click,product,add_to_cart
+4,1,1621520499,click,home,register
+5,1,1621520505,click,home,login
