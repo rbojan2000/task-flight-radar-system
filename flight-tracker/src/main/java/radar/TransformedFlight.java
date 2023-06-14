@@ -73,19 +73,19 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
     return DECODER.decode(b);
   }
 
-  private java.lang.CharSequence id;
-  private java.lang.CharSequence date;
-  private java.lang.CharSequence from;
-  private java.lang.CharSequence departureAirportCode;
-  private java.lang.CharSequence arrivalAirportCode;
-  private java.lang.CharSequence departureTime;
-  private java.lang.CharSequence arrivalTime;
+  private CharSequence id;
+  private CharSequence date;
+  private CharSequence from;
+  private CharSequence departureAirportCode;
+  private CharSequence arrivalAirportCode;
+  private CharSequence departureTime;
+  private CharSequence arrivalTime;
   private long departureTimestamp;
   private long arrivalTimestamp;
   private int duration;
-  private java.lang.CharSequence status;
-  private java.lang.CharSequence gate;
-  private java.lang.CharSequence airline;
+  private CharSequence status;
+  private CharSequence gate;
+  private CharSequence airline;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -110,7 +110,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * @param gate The new value for gate
    * @param airline The new value for airline
    */
-  public TransformedFlight(java.lang.CharSequence id, java.lang.CharSequence date, java.lang.CharSequence from, java.lang.CharSequence departureAirportCode, java.lang.CharSequence arrivalAirportCode, java.lang.CharSequence departureTime, java.lang.CharSequence arrivalTime, java.lang.Long departureTimestamp, java.lang.Long arrivalTimestamp, java.lang.Integer duration, java.lang.CharSequence status, java.lang.CharSequence gate, java.lang.CharSequence airline) {
+  public TransformedFlight(CharSequence id, CharSequence date, CharSequence from, CharSequence departureAirportCode, CharSequence arrivalAirportCode, CharSequence departureTime, CharSequence arrivalTime, Long departureTimestamp, Long arrivalTimestamp, Integer duration, CharSequence status, CharSequence gate, CharSequence airline) {
     this.id = id;
     this.date = date;
     this.from = from;
@@ -127,14 +127,14 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
   }
 
   @Override
-  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
+  public SpecificData getSpecificData() { return MODEL$; }
 
   @Override
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
 
   // Used by DatumWriter.  Applications should not call.
   @Override
-  public java.lang.Object get(int field$) {
+  public Object get(int field$) {
     switch (field$) {
     case 0: return id;
     case 1: return date;
@@ -156,21 +156,21 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
   // Used by DatumReader.  Applications should not call.
   @Override
   @SuppressWarnings(value="unchecked")
-  public void put(int field$, java.lang.Object value$) {
+  public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.CharSequence)value$; break;
-    case 1: date = (java.lang.CharSequence)value$; break;
-    case 2: from = (java.lang.CharSequence)value$; break;
-    case 3: departureAirportCode = (java.lang.CharSequence)value$; break;
-    case 4: arrivalAirportCode = (java.lang.CharSequence)value$; break;
-    case 5: departureTime = (java.lang.CharSequence)value$; break;
-    case 6: arrivalTime = (java.lang.CharSequence)value$; break;
-    case 7: departureTimestamp = (java.lang.Long)value$; break;
-    case 8: arrivalTimestamp = (java.lang.Long)value$; break;
-    case 9: duration = (java.lang.Integer)value$; break;
-    case 10: status = (java.lang.CharSequence)value$; break;
-    case 11: gate = (java.lang.CharSequence)value$; break;
-    case 12: airline = (java.lang.CharSequence)value$; break;
+    case 0: id = (CharSequence)value$; break;
+    case 1: date = (CharSequence)value$; break;
+    case 2: from = (CharSequence)value$; break;
+    case 3: departureAirportCode = (CharSequence)value$; break;
+    case 4: arrivalAirportCode = (CharSequence)value$; break;
+    case 5: departureTime = (CharSequence)value$; break;
+    case 6: arrivalTime = (CharSequence)value$; break;
+    case 7: departureTimestamp = (Long)value$; break;
+    case 8: arrivalTimestamp = (Long)value$; break;
+    case 9: duration = (Integer)value$; break;
+    case 10: status = (CharSequence)value$; break;
+    case 11: gate = (CharSequence)value$; break;
+    case 12: airline = (CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -179,7 +179,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public java.lang.CharSequence getId() {
+  public CharSequence getId() {
     return id;
   }
 
@@ -188,7 +188,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.CharSequence value) {
+  public void setId(CharSequence value) {
     this.id = value;
   }
 
@@ -196,7 +196,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'date' field.
    * @return The value of the 'date' field.
    */
-  public java.lang.CharSequence getDate() {
+  public CharSequence getDate() {
     return date;
   }
 
@@ -205,7 +205,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'date' field.
    * @param value the value to set.
    */
-  public void setDate(java.lang.CharSequence value) {
+  public void setDate(CharSequence value) {
     this.date = value;
   }
 
@@ -213,7 +213,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'from' field.
    * @return The value of the 'from' field.
    */
-  public java.lang.CharSequence getFrom() {
+  public CharSequence getFrom() {
     return from;
   }
 
@@ -222,7 +222,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'from' field.
    * @param value the value to set.
    */
-  public void setFrom(java.lang.CharSequence value) {
+  public void setFrom(CharSequence value) {
     this.from = value;
   }
 
@@ -230,7 +230,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'departureAirportCode' field.
    * @return The value of the 'departureAirportCode' field.
    */
-  public java.lang.CharSequence getDepartureAirportCode() {
+  public CharSequence getDepartureAirportCode() {
     return departureAirportCode;
   }
 
@@ -239,7 +239,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'departureAirportCode' field.
    * @param value the value to set.
    */
-  public void setDepartureAirportCode(java.lang.CharSequence value) {
+  public void setDepartureAirportCode(CharSequence value) {
     this.departureAirportCode = value;
   }
 
@@ -247,7 +247,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'arrivalAirportCode' field.
    * @return The value of the 'arrivalAirportCode' field.
    */
-  public java.lang.CharSequence getArrivalAirportCode() {
+  public CharSequence getArrivalAirportCode() {
     return arrivalAirportCode;
   }
 
@@ -256,7 +256,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'arrivalAirportCode' field.
    * @param value the value to set.
    */
-  public void setArrivalAirportCode(java.lang.CharSequence value) {
+  public void setArrivalAirportCode(CharSequence value) {
     this.arrivalAirportCode = value;
   }
 
@@ -264,7 +264,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'departureTime' field.
    * @return The value of the 'departureTime' field.
    */
-  public java.lang.CharSequence getDepartureTime() {
+  public CharSequence getDepartureTime() {
     return departureTime;
   }
 
@@ -273,7 +273,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'departureTime' field.
    * @param value the value to set.
    */
-  public void setDepartureTime(java.lang.CharSequence value) {
+  public void setDepartureTime(CharSequence value) {
     this.departureTime = value;
   }
 
@@ -281,7 +281,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'arrivalTime' field.
    * @return The value of the 'arrivalTime' field.
    */
-  public java.lang.CharSequence getArrivalTime() {
+  public CharSequence getArrivalTime() {
     return arrivalTime;
   }
 
@@ -290,7 +290,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'arrivalTime' field.
    * @param value the value to set.
    */
-  public void setArrivalTime(java.lang.CharSequence value) {
+  public void setArrivalTime(CharSequence value) {
     this.arrivalTime = value;
   }
 
@@ -349,7 +349,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'status' field.
    * @return The value of the 'status' field.
    */
-  public java.lang.CharSequence getStatus() {
+  public CharSequence getStatus() {
     return status;
   }
 
@@ -358,7 +358,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'status' field.
    * @param value the value to set.
    */
-  public void setStatus(java.lang.CharSequence value) {
+  public void setStatus(CharSequence value) {
     this.status = value;
   }
 
@@ -366,7 +366,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'gate' field.
    * @return The value of the 'gate' field.
    */
-  public java.lang.CharSequence getGate() {
+  public CharSequence getGate() {
     return gate;
   }
 
@@ -375,7 +375,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'gate' field.
    * @param value the value to set.
    */
-  public void setGate(java.lang.CharSequence value) {
+  public void setGate(CharSequence value) {
     this.gate = value;
   }
 
@@ -383,7 +383,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'airline' field.
    * @return The value of the 'airline' field.
    */
-  public java.lang.CharSequence getAirline() {
+  public CharSequence getAirline() {
     return airline;
   }
 
@@ -392,7 +392,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'airline' field.
    * @param value the value to set.
    */
-  public void setAirline(java.lang.CharSequence value) {
+  public void setAirline(CharSequence value) {
     this.airline = value;
   }
 
@@ -400,8 +400,8 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * Creates a new TransformedFlight RecordBuilder.
    * @return A new TransformedFlight RecordBuilder
    */
-  public static radar.TransformedFlight.Builder newBuilder() {
-    return new radar.TransformedFlight.Builder();
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
   /**
@@ -409,11 +409,11 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing builder to copy.
    * @return A new TransformedFlight RecordBuilder
    */
-  public static radar.TransformedFlight.Builder newBuilder(radar.TransformedFlight.Builder other) {
+  public static Builder newBuilder(Builder other) {
     if (other == null) {
-      return new radar.TransformedFlight.Builder();
+      return new Builder();
     } else {
-      return new radar.TransformedFlight.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -422,11 +422,11 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing instance to copy.
    * @return A new TransformedFlight RecordBuilder
    */
-  public static radar.TransformedFlight.Builder newBuilder(radar.TransformedFlight other) {
+  public static Builder newBuilder(TransformedFlight other) {
     if (other == null) {
-      return new radar.TransformedFlight.Builder();
+      return new Builder();
     } else {
-      return new radar.TransformedFlight.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -437,19 +437,19 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<TransformedFlight>
     implements org.apache.avro.data.RecordBuilder<TransformedFlight> {
 
-    private java.lang.CharSequence id;
-    private java.lang.CharSequence date;
-    private java.lang.CharSequence from;
-    private java.lang.CharSequence departureAirportCode;
-    private java.lang.CharSequence arrivalAirportCode;
-    private java.lang.CharSequence departureTime;
-    private java.lang.CharSequence arrivalTime;
+    private CharSequence id;
+    private CharSequence date;
+    private CharSequence from;
+    private CharSequence departureAirportCode;
+    private CharSequence arrivalAirportCode;
+    private CharSequence departureTime;
+    private CharSequence arrivalTime;
     private long departureTimestamp;
     private long arrivalTimestamp;
     private int duration;
-    private java.lang.CharSequence status;
-    private java.lang.CharSequence gate;
-    private java.lang.CharSequence airline;
+    private CharSequence status;
+    private CharSequence gate;
+    private CharSequence airline;
 
     /** Creates a new Builder */
     private Builder() {
@@ -460,7 +460,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(radar.TransformedFlight.Builder other) {
+    private Builder(Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -520,7 +520,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing TransformedFlight instance
      * @param other The existing instance to copy.
      */
-    private Builder(radar.TransformedFlight other) {
+    private Builder(TransformedFlight other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -580,7 +580,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public java.lang.CharSequence getId() {
+    public CharSequence getId() {
       return id;
     }
 
@@ -590,7 +590,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setId(java.lang.CharSequence value) {
+    public Builder setId(CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -610,7 +610,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearId() {
+    public Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -620,7 +620,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'date' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDate() {
+    public CharSequence getDate() {
       return date;
     }
 
@@ -630,7 +630,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setDate(java.lang.CharSequence value) {
+    public Builder setDate(CharSequence value) {
       validate(fields()[1], value);
       this.date = value;
       fieldSetFlags()[1] = true;
@@ -650,7 +650,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'date' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearDate() {
+    public Builder clearDate() {
       date = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -660,7 +660,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'from' field.
       * @return The value.
       */
-    public java.lang.CharSequence getFrom() {
+    public CharSequence getFrom() {
       return from;
     }
 
@@ -670,7 +670,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'from'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setFrom(java.lang.CharSequence value) {
+    public Builder setFrom(CharSequence value) {
       validate(fields()[2], value);
       this.from = value;
       fieldSetFlags()[2] = true;
@@ -690,7 +690,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'from' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearFrom() {
+    public Builder clearFrom() {
       from = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -700,7 +700,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'departureAirportCode' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDepartureAirportCode() {
+    public CharSequence getDepartureAirportCode() {
       return departureAirportCode;
     }
 
@@ -710,7 +710,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'departureAirportCode'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setDepartureAirportCode(java.lang.CharSequence value) {
+    public Builder setDepartureAirportCode(CharSequence value) {
       validate(fields()[3], value);
       this.departureAirportCode = value;
       fieldSetFlags()[3] = true;
@@ -730,7 +730,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'departureAirportCode' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearDepartureAirportCode() {
+    public Builder clearDepartureAirportCode() {
       departureAirportCode = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -740,7 +740,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'arrivalAirportCode' field.
       * @return The value.
       */
-    public java.lang.CharSequence getArrivalAirportCode() {
+    public CharSequence getArrivalAirportCode() {
       return arrivalAirportCode;
     }
 
@@ -750,7 +750,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'arrivalAirportCode'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setArrivalAirportCode(java.lang.CharSequence value) {
+    public Builder setArrivalAirportCode(CharSequence value) {
       validate(fields()[4], value);
       this.arrivalAirportCode = value;
       fieldSetFlags()[4] = true;
@@ -770,7 +770,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'arrivalAirportCode' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearArrivalAirportCode() {
+    public Builder clearArrivalAirportCode() {
       arrivalAirportCode = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -780,7 +780,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'departureTime' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDepartureTime() {
+    public CharSequence getDepartureTime() {
       return departureTime;
     }
 
@@ -790,7 +790,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'departureTime'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setDepartureTime(java.lang.CharSequence value) {
+    public Builder setDepartureTime(CharSequence value) {
       validate(fields()[5], value);
       this.departureTime = value;
       fieldSetFlags()[5] = true;
@@ -810,7 +810,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'departureTime' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearDepartureTime() {
+    public Builder clearDepartureTime() {
       departureTime = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -820,7 +820,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'arrivalTime' field.
       * @return The value.
       */
-    public java.lang.CharSequence getArrivalTime() {
+    public CharSequence getArrivalTime() {
       return arrivalTime;
     }
 
@@ -830,7 +830,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'arrivalTime'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setArrivalTime(java.lang.CharSequence value) {
+    public Builder setArrivalTime(CharSequence value) {
       validate(fields()[6], value);
       this.arrivalTime = value;
       fieldSetFlags()[6] = true;
@@ -850,7 +850,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'arrivalTime' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearArrivalTime() {
+    public Builder clearArrivalTime() {
       arrivalTime = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -870,7 +870,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'departureTimestamp'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setDepartureTimestamp(long value) {
+    public Builder setDepartureTimestamp(long value) {
       validate(fields()[7], value);
       this.departureTimestamp = value;
       fieldSetFlags()[7] = true;
@@ -890,7 +890,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'departureTimestamp' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearDepartureTimestamp() {
+    public Builder clearDepartureTimestamp() {
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -909,7 +909,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'arrivalTimestamp'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setArrivalTimestamp(long value) {
+    public Builder setArrivalTimestamp(long value) {
       validate(fields()[8], value);
       this.arrivalTimestamp = value;
       fieldSetFlags()[8] = true;
@@ -929,7 +929,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'arrivalTimestamp' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearArrivalTimestamp() {
+    public Builder clearArrivalTimestamp() {
       fieldSetFlags()[8] = false;
       return this;
     }
@@ -948,7 +948,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'duration'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setDuration(int value) {
+    public Builder setDuration(int value) {
       validate(fields()[9], value);
       this.duration = value;
       fieldSetFlags()[9] = true;
@@ -968,7 +968,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'duration' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearDuration() {
+    public Builder clearDuration() {
       fieldSetFlags()[9] = false;
       return this;
     }
@@ -977,7 +977,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'status' field.
       * @return The value.
       */
-    public java.lang.CharSequence getStatus() {
+    public CharSequence getStatus() {
       return status;
     }
 
@@ -987,7 +987,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setStatus(java.lang.CharSequence value) {
+    public Builder setStatus(CharSequence value) {
       validate(fields()[10], value);
       this.status = value;
       fieldSetFlags()[10] = true;
@@ -1007,7 +1007,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'status' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearStatus() {
+    public Builder clearStatus() {
       status = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1017,7 +1017,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'gate' field.
       * @return The value.
       */
-    public java.lang.CharSequence getGate() {
+    public CharSequence getGate() {
       return gate;
     }
 
@@ -1027,7 +1027,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'gate'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setGate(java.lang.CharSequence value) {
+    public Builder setGate(CharSequence value) {
       validate(fields()[11], value);
       this.gate = value;
       fieldSetFlags()[11] = true;
@@ -1047,7 +1047,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'gate' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearGate() {
+    public Builder clearGate() {
       gate = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1057,7 +1057,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'airline' field.
       * @return The value.
       */
-    public java.lang.CharSequence getAirline() {
+    public CharSequence getAirline() {
       return airline;
     }
 
@@ -1067,7 +1067,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'airline'.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder setAirline(java.lang.CharSequence value) {
+    public Builder setAirline(CharSequence value) {
       validate(fields()[12], value);
       this.airline = value;
       fieldSetFlags()[12] = true;
@@ -1087,7 +1087,7 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'airline' field.
       * @return This builder.
       */
-    public radar.TransformedFlight.Builder clearAirline() {
+    public Builder clearAirline() {
       airline = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1098,23 +1098,23 @@ public class TransformedFlight extends org.apache.avro.specific.SpecificRecordBa
     public TransformedFlight build() {
       try {
         TransformedFlight record = new TransformedFlight();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.date = fieldSetFlags()[1] ? this.date : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.from = fieldSetFlags()[2] ? this.from : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.departureAirportCode = fieldSetFlags()[3] ? this.departureAirportCode : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.arrivalAirportCode = fieldSetFlags()[4] ? this.arrivalAirportCode : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.departureTime = fieldSetFlags()[5] ? this.departureTime : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.arrivalTime = fieldSetFlags()[6] ? this.arrivalTime : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.departureTimestamp = fieldSetFlags()[7] ? this.departureTimestamp : (java.lang.Long) defaultValue(fields()[7]);
-        record.arrivalTimestamp = fieldSetFlags()[8] ? this.arrivalTimestamp : (java.lang.Long) defaultValue(fields()[8]);
-        record.duration = fieldSetFlags()[9] ? this.duration : (java.lang.Integer) defaultValue(fields()[9]);
-        record.status = fieldSetFlags()[10] ? this.status : (java.lang.CharSequence) defaultValue(fields()[10]);
-        record.gate = fieldSetFlags()[11] ? this.gate : (java.lang.CharSequence) defaultValue(fields()[11]);
-        record.airline = fieldSetFlags()[12] ? this.airline : (java.lang.CharSequence) defaultValue(fields()[12]);
+        record.id = fieldSetFlags()[0] ? this.id : (CharSequence) defaultValue(fields()[0]);
+        record.date = fieldSetFlags()[1] ? this.date : (CharSequence) defaultValue(fields()[1]);
+        record.from = fieldSetFlags()[2] ? this.from : (CharSequence) defaultValue(fields()[2]);
+        record.departureAirportCode = fieldSetFlags()[3] ? this.departureAirportCode : (CharSequence) defaultValue(fields()[3]);
+        record.arrivalAirportCode = fieldSetFlags()[4] ? this.arrivalAirportCode : (CharSequence) defaultValue(fields()[4]);
+        record.departureTime = fieldSetFlags()[5] ? this.departureTime : (CharSequence) defaultValue(fields()[5]);
+        record.arrivalTime = fieldSetFlags()[6] ? this.arrivalTime : (CharSequence) defaultValue(fields()[6]);
+        record.departureTimestamp = fieldSetFlags()[7] ? this.departureTimestamp : (Long) defaultValue(fields()[7]);
+        record.arrivalTimestamp = fieldSetFlags()[8] ? this.arrivalTimestamp : (Long) defaultValue(fields()[8]);
+        record.duration = fieldSetFlags()[9] ? this.duration : (Integer) defaultValue(fields()[9]);
+        record.status = fieldSetFlags()[10] ? this.status : (CharSequence) defaultValue(fields()[10]);
+        record.gate = fieldSetFlags()[11] ? this.gate : (CharSequence) defaultValue(fields()[11]);
+        record.airline = fieldSetFlags()[12] ? this.airline : (CharSequence) defaultValue(fields()[12]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
-      } catch (java.lang.Exception e) {
+      } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }

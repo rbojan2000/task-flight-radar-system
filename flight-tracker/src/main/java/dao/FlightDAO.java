@@ -1,7 +1,6 @@
 package dao;
 
 import lombok.*;
-import radar.AirportKpi;
 import radar.AirportUpdateEvent;
 import radar.TransformedFlight;
 

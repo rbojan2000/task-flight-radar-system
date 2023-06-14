@@ -73,15 +73,15 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
     return DECODER.decode(b);
   }
 
-  private java.lang.CharSequence id;
-  private java.lang.CharSequence date;
-  private java.lang.CharSequence destination;
-  private java.lang.Long STD;
-  private java.lang.Long STA;
-  private java.lang.CharSequence timezones;
-  private java.lang.CharSequence status;
-  private java.lang.CharSequence gate;
-  private java.lang.CharSequence airline;
+  private CharSequence id;
+  private CharSequence date;
+  private CharSequence destination;
+  private Long STD;
+  private Long STA;
+  private CharSequence timezones;
+  private CharSequence status;
+  private CharSequence gate;
+  private CharSequence airline;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -102,7 +102,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param gate The new value for gate
    * @param airline The new value for airline
    */
-  public FlightUpdateEvent(java.lang.CharSequence id, java.lang.CharSequence date, java.lang.CharSequence destination, java.lang.Long STD, java.lang.Long STA, java.lang.CharSequence timezones, java.lang.CharSequence status, java.lang.CharSequence gate, java.lang.CharSequence airline) {
+  public FlightUpdateEvent(CharSequence id, CharSequence date, CharSequence destination, Long STD, Long STA, CharSequence timezones, CharSequence status, CharSequence gate, CharSequence airline) {
     this.id = id;
     this.date = date;
     this.destination = destination;
@@ -115,14 +115,14 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
   }
 
   @Override
-  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
+  public SpecificData getSpecificData() { return MODEL$; }
 
   @Override
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
 
   // Used by DatumWriter.  Applications should not call.
   @Override
-  public java.lang.Object get(int field$) {
+  public Object get(int field$) {
     switch (field$) {
     case 0: return id;
     case 1: return date;
@@ -140,17 +140,17 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
   // Used by DatumReader.  Applications should not call.
   @Override
   @SuppressWarnings(value="unchecked")
-  public void put(int field$, java.lang.Object value$) {
+  public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.CharSequence)value$; break;
-    case 1: date = (java.lang.CharSequence)value$; break;
-    case 2: destination = (java.lang.CharSequence)value$; break;
-    case 3: STD = (java.lang.Long)value$; break;
-    case 4: STA = (java.lang.Long)value$; break;
-    case 5: timezones = (java.lang.CharSequence)value$; break;
-    case 6: status = (java.lang.CharSequence)value$; break;
-    case 7: gate = (java.lang.CharSequence)value$; break;
-    case 8: airline = (java.lang.CharSequence)value$; break;
+    case 0: id = (CharSequence)value$; break;
+    case 1: date = (CharSequence)value$; break;
+    case 2: destination = (CharSequence)value$; break;
+    case 3: STD = (Long)value$; break;
+    case 4: STA = (Long)value$; break;
+    case 5: timezones = (CharSequence)value$; break;
+    case 6: status = (CharSequence)value$; break;
+    case 7: gate = (CharSequence)value$; break;
+    case 8: airline = (CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -159,7 +159,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public java.lang.CharSequence getId() {
+  public CharSequence getId() {
     return id;
   }
 
@@ -168,7 +168,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.CharSequence value) {
+  public void setId(CharSequence value) {
     this.id = value;
   }
 
@@ -176,7 +176,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'date' field.
    * @return The value of the 'date' field.
    */
-  public java.lang.CharSequence getDate() {
+  public CharSequence getDate() {
     return date;
   }
 
@@ -185,7 +185,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'date' field.
    * @param value the value to set.
    */
-  public void setDate(java.lang.CharSequence value) {
+  public void setDate(CharSequence value) {
     this.date = value;
   }
 
@@ -193,7 +193,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'destination' field.
    * @return The value of the 'destination' field.
    */
-  public java.lang.CharSequence getDestination() {
+  public CharSequence getDestination() {
     return destination;
   }
 
@@ -202,7 +202,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'destination' field.
    * @param value the value to set.
    */
-  public void setDestination(java.lang.CharSequence value) {
+  public void setDestination(CharSequence value) {
     this.destination = value;
   }
 
@@ -210,7 +210,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'STD' field.
    * @return The value of the 'STD' field.
    */
-  public java.lang.Long getSTD() {
+  public Long getSTD() {
     return STD;
   }
 
@@ -219,7 +219,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'STD' field.
    * @param value the value to set.
    */
-  public void setSTD(java.lang.Long value) {
+  public void setSTD(Long value) {
     this.STD = value;
   }
 
@@ -227,7 +227,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'STA' field.
    * @return The value of the 'STA' field.
    */
-  public java.lang.Long getSTA() {
+  public Long getSTA() {
     return STA;
   }
 
@@ -236,7 +236,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'STA' field.
    * @param value the value to set.
    */
-  public void setSTA(java.lang.Long value) {
+  public void setSTA(Long value) {
     this.STA = value;
   }
 
@@ -244,7 +244,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'timezones' field.
    * @return The value of the 'timezones' field.
    */
-  public java.lang.CharSequence getTimezones() {
+  public CharSequence getTimezones() {
     return timezones;
   }
 
@@ -253,7 +253,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'timezones' field.
    * @param value the value to set.
    */
-  public void setTimezones(java.lang.CharSequence value) {
+  public void setTimezones(CharSequence value) {
     this.timezones = value;
   }
 
@@ -261,7 +261,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'status' field.
    * @return The value of the 'status' field.
    */
-  public java.lang.CharSequence getStatus() {
+  public CharSequence getStatus() {
     return status;
   }
 
@@ -270,7 +270,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'status' field.
    * @param value the value to set.
    */
-  public void setStatus(java.lang.CharSequence value) {
+  public void setStatus(CharSequence value) {
     this.status = value;
   }
 
@@ -278,7 +278,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'gate' field.
    * @return The value of the 'gate' field.
    */
-  public java.lang.CharSequence getGate() {
+  public CharSequence getGate() {
     return gate;
   }
 
@@ -287,7 +287,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'gate' field.
    * @param value the value to set.
    */
-  public void setGate(java.lang.CharSequence value) {
+  public void setGate(CharSequence value) {
     this.gate = value;
   }
 
@@ -295,7 +295,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Gets the value of the 'airline' field.
    * @return The value of the 'airline' field.
    */
-  public java.lang.CharSequence getAirline() {
+  public CharSequence getAirline() {
     return airline;
   }
 
@@ -304,7 +304,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Sets the value of the 'airline' field.
    * @param value the value to set.
    */
-  public void setAirline(java.lang.CharSequence value) {
+  public void setAirline(CharSequence value) {
     this.airline = value;
   }
 
@@ -312,8 +312,8 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * Creates a new FlightUpdateEvent RecordBuilder.
    * @return A new FlightUpdateEvent RecordBuilder
    */
-  public static radar.FlightUpdateEvent.Builder newBuilder() {
-    return new radar.FlightUpdateEvent.Builder();
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
   /**
@@ -321,11 +321,11 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing builder to copy.
    * @return A new FlightUpdateEvent RecordBuilder
    */
-  public static radar.FlightUpdateEvent.Builder newBuilder(radar.FlightUpdateEvent.Builder other) {
+  public static Builder newBuilder(Builder other) {
     if (other == null) {
-      return new radar.FlightUpdateEvent.Builder();
+      return new Builder();
     } else {
-      return new radar.FlightUpdateEvent.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -334,11 +334,11 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
    * @param other The existing instance to copy.
    * @return A new FlightUpdateEvent RecordBuilder
    */
-  public static radar.FlightUpdateEvent.Builder newBuilder(radar.FlightUpdateEvent other) {
+  public static Builder newBuilder(FlightUpdateEvent other) {
     if (other == null) {
-      return new radar.FlightUpdateEvent.Builder();
+      return new Builder();
     } else {
-      return new radar.FlightUpdateEvent.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -349,15 +349,15 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FlightUpdateEvent>
     implements org.apache.avro.data.RecordBuilder<FlightUpdateEvent> {
 
-    private java.lang.CharSequence id;
-    private java.lang.CharSequence date;
-    private java.lang.CharSequence destination;
-    private java.lang.Long STD;
-    private java.lang.Long STA;
-    private java.lang.CharSequence timezones;
-    private java.lang.CharSequence status;
-    private java.lang.CharSequence gate;
-    private java.lang.CharSequence airline;
+    private CharSequence id;
+    private CharSequence date;
+    private CharSequence destination;
+    private Long STD;
+    private Long STA;
+    private CharSequence timezones;
+    private CharSequence status;
+    private CharSequence gate;
+    private CharSequence airline;
 
     /** Creates a new Builder */
     private Builder() {
@@ -368,7 +368,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(radar.FlightUpdateEvent.Builder other) {
+    private Builder(Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -412,7 +412,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing FlightUpdateEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(radar.FlightUpdateEvent other) {
+    private Builder(FlightUpdateEvent other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -456,7 +456,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public java.lang.CharSequence getId() {
+    public CharSequence getId() {
       return id;
     }
 
@@ -466,7 +466,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setId(java.lang.CharSequence value) {
+    public Builder setId(CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -486,7 +486,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearId() {
+    public Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -496,7 +496,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'date' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDate() {
+    public CharSequence getDate() {
       return date;
     }
 
@@ -506,7 +506,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'date'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setDate(java.lang.CharSequence value) {
+    public Builder setDate(CharSequence value) {
       validate(fields()[1], value);
       this.date = value;
       fieldSetFlags()[1] = true;
@@ -526,7 +526,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'date' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearDate() {
+    public Builder clearDate() {
       date = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -536,7 +536,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'destination' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDestination() {
+    public CharSequence getDestination() {
       return destination;
     }
 
@@ -546,7 +546,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'destination'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setDestination(java.lang.CharSequence value) {
+    public Builder setDestination(CharSequence value) {
       validate(fields()[2], value);
       this.destination = value;
       fieldSetFlags()[2] = true;
@@ -566,7 +566,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'destination' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearDestination() {
+    public Builder clearDestination() {
       destination = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -576,7 +576,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'STD' field.
       * @return The value.
       */
-    public java.lang.Long getSTD() {
+    public Long getSTD() {
       return STD;
     }
 
@@ -586,7 +586,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'STD'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setSTD(java.lang.Long value) {
+    public Builder setSTD(Long value) {
       validate(fields()[3], value);
       this.STD = value;
       fieldSetFlags()[3] = true;
@@ -606,7 +606,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'STD' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearSTD() {
+    public Builder clearSTD() {
       STD = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -616,7 +616,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'STA' field.
       * @return The value.
       */
-    public java.lang.Long getSTA() {
+    public Long getSTA() {
       return STA;
     }
 
@@ -626,7 +626,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'STA'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setSTA(java.lang.Long value) {
+    public Builder setSTA(Long value) {
       validate(fields()[4], value);
       this.STA = value;
       fieldSetFlags()[4] = true;
@@ -646,7 +646,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'STA' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearSTA() {
+    public Builder clearSTA() {
       STA = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -656,7 +656,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'timezones' field.
       * @return The value.
       */
-    public java.lang.CharSequence getTimezones() {
+    public CharSequence getTimezones() {
       return timezones;
     }
 
@@ -666,7 +666,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'timezones'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setTimezones(java.lang.CharSequence value) {
+    public Builder setTimezones(CharSequence value) {
       validate(fields()[5], value);
       this.timezones = value;
       fieldSetFlags()[5] = true;
@@ -686,7 +686,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'timezones' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearTimezones() {
+    public Builder clearTimezones() {
       timezones = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -696,7 +696,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'status' field.
       * @return The value.
       */
-    public java.lang.CharSequence getStatus() {
+    public CharSequence getStatus() {
       return status;
     }
 
@@ -706,7 +706,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setStatus(java.lang.CharSequence value) {
+    public Builder setStatus(CharSequence value) {
       validate(fields()[6], value);
       this.status = value;
       fieldSetFlags()[6] = true;
@@ -726,7 +726,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'status' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearStatus() {
+    public Builder clearStatus() {
       status = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -736,7 +736,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'gate' field.
       * @return The value.
       */
-    public java.lang.CharSequence getGate() {
+    public CharSequence getGate() {
       return gate;
     }
 
@@ -746,7 +746,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'gate'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setGate(java.lang.CharSequence value) {
+    public Builder setGate(CharSequence value) {
       validate(fields()[7], value);
       this.gate = value;
       fieldSetFlags()[7] = true;
@@ -766,7 +766,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'gate' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearGate() {
+    public Builder clearGate() {
       gate = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -776,7 +776,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Gets the value of the 'airline' field.
       * @return The value.
       */
-    public java.lang.CharSequence getAirline() {
+    public CharSequence getAirline() {
       return airline;
     }
 
@@ -786,7 +786,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'airline'.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder setAirline(java.lang.CharSequence value) {
+    public Builder setAirline(CharSequence value) {
       validate(fields()[8], value);
       this.airline = value;
       fieldSetFlags()[8] = true;
@@ -806,7 +806,7 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'airline' field.
       * @return This builder.
       */
-    public radar.FlightUpdateEvent.Builder clearAirline() {
+    public Builder clearAirline() {
       airline = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -817,19 +817,19 @@ public class FlightUpdateEvent extends org.apache.avro.specific.SpecificRecordBa
     public FlightUpdateEvent build() {
       try {
         FlightUpdateEvent record = new FlightUpdateEvent();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.date = fieldSetFlags()[1] ? this.date : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.destination = fieldSetFlags()[2] ? this.destination : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.STD = fieldSetFlags()[3] ? this.STD : (java.lang.Long) defaultValue(fields()[3]);
-        record.STA = fieldSetFlags()[4] ? this.STA : (java.lang.Long) defaultValue(fields()[4]);
-        record.timezones = fieldSetFlags()[5] ? this.timezones : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.status = fieldSetFlags()[6] ? this.status : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.gate = fieldSetFlags()[7] ? this.gate : (java.lang.CharSequence) defaultValue(fields()[7]);
-        record.airline = fieldSetFlags()[8] ? this.airline : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.id = fieldSetFlags()[0] ? this.id : (CharSequence) defaultValue(fields()[0]);
+        record.date = fieldSetFlags()[1] ? this.date : (CharSequence) defaultValue(fields()[1]);
+        record.destination = fieldSetFlags()[2] ? this.destination : (CharSequence) defaultValue(fields()[2]);
+        record.STD = fieldSetFlags()[3] ? this.STD : (Long) defaultValue(fields()[3]);
+        record.STA = fieldSetFlags()[4] ? this.STA : (Long) defaultValue(fields()[4]);
+        record.timezones = fieldSetFlags()[5] ? this.timezones : (CharSequence) defaultValue(fields()[5]);
+        record.status = fieldSetFlags()[6] ? this.status : (CharSequence) defaultValue(fields()[6]);
+        record.gate = fieldSetFlags()[7] ? this.gate : (CharSequence) defaultValue(fields()[7]);
+        record.airline = fieldSetFlags()[8] ? this.airline : (CharSequence) defaultValue(fields()[8]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
-      } catch (java.lang.Exception e) {
+      } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }

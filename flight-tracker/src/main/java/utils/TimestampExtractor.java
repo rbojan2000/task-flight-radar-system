@@ -2,7 +2,6 @@ package utils;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import radar.FlightUpdateEvent;
-import radar.TransformedFlight;
 
 public class TimestampExtractor implements org.apache.kafka.streams.processor.TimestampExtractor {
 

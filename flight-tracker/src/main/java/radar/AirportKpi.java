@@ -73,17 +73,17 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
     return DECODER.decode(b);
   }
 
-  private java.lang.CharSequence airport;
-  private java.lang.CharSequence city;
-  private java.lang.CharSequence country;
-  private java.lang.CharSequence code;
-  private java.lang.Double latitude;
-  private java.lang.Double longitude;
-  private java.lang.CharSequence tz;
-  private java.lang.Long departuresLast5Minutes;
-  private java.lang.Long canceledFlightsLast5Minutes;
-  private java.lang.Long minFlightDuration;
-  private java.lang.Long lastDepartureTimestamp;
+  private CharSequence airport;
+  private CharSequence city;
+  private CharSequence country;
+  private CharSequence code;
+  private Double latitude;
+  private Double longitude;
+  private CharSequence tz;
+  private Long departuresLast5Minutes;
+  private Long canceledFlightsLast5Minutes;
+  private Long minFlightDuration;
+  private Long lastDepartureTimestamp;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -106,7 +106,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * @param minFlightDuration The new value for minFlightDuration
    * @param lastDepartureTimestamp The new value for lastDepartureTimestamp
    */
-  public AirportKpi(java.lang.CharSequence airport, java.lang.CharSequence city, java.lang.CharSequence country, java.lang.CharSequence code, java.lang.Double latitude, java.lang.Double longitude, java.lang.CharSequence tz, java.lang.Long departuresLast5Minutes, java.lang.Long canceledFlightsLast5Minutes, java.lang.Long minFlightDuration, java.lang.Long lastDepartureTimestamp) {
+  public AirportKpi(CharSequence airport, CharSequence city, CharSequence country, CharSequence code, Double latitude, Double longitude, CharSequence tz, Long departuresLast5Minutes, Long canceledFlightsLast5Minutes, Long minFlightDuration, Long lastDepartureTimestamp) {
     this.airport = airport;
     this.city = city;
     this.country = country;
@@ -121,14 +121,14 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   @Override
-  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
+  public SpecificData getSpecificData() { return MODEL$; }
 
   @Override
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
 
   // Used by DatumWriter.  Applications should not call.
   @Override
-  public java.lang.Object get(int field$) {
+  public Object get(int field$) {
     switch (field$) {
     case 0: return airport;
     case 1: return city;
@@ -148,19 +148,19 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
   // Used by DatumReader.  Applications should not call.
   @Override
   @SuppressWarnings(value="unchecked")
-  public void put(int field$, java.lang.Object value$) {
+  public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: airport = (java.lang.CharSequence)value$; break;
-    case 1: city = (java.lang.CharSequence)value$; break;
-    case 2: country = (java.lang.CharSequence)value$; break;
-    case 3: code = (java.lang.CharSequence)value$; break;
-    case 4: latitude = (java.lang.Double)value$; break;
-    case 5: longitude = (java.lang.Double)value$; break;
-    case 6: tz = (java.lang.CharSequence)value$; break;
-    case 7: departuresLast5Minutes = (java.lang.Long)value$; break;
-    case 8: canceledFlightsLast5Minutes = (java.lang.Long)value$; break;
-    case 9: minFlightDuration = (java.lang.Long)value$; break;
-    case 10: lastDepartureTimestamp = (java.lang.Long)value$; break;
+    case 0: airport = (CharSequence)value$; break;
+    case 1: city = (CharSequence)value$; break;
+    case 2: country = (CharSequence)value$; break;
+    case 3: code = (CharSequence)value$; break;
+    case 4: latitude = (Double)value$; break;
+    case 5: longitude = (Double)value$; break;
+    case 6: tz = (CharSequence)value$; break;
+    case 7: departuresLast5Minutes = (Long)value$; break;
+    case 8: canceledFlightsLast5Minutes = (Long)value$; break;
+    case 9: minFlightDuration = (Long)value$; break;
+    case 10: lastDepartureTimestamp = (Long)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -169,7 +169,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'airport' field.
    * @return The value of the 'airport' field.
    */
-  public java.lang.CharSequence getAirport() {
+  public CharSequence getAirport() {
     return airport;
   }
 
@@ -178,7 +178,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'airport' field.
    * @param value the value to set.
    */
-  public void setAirport(java.lang.CharSequence value) {
+  public void setAirport(CharSequence value) {
     this.airport = value;
   }
 
@@ -186,7 +186,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'city' field.
    * @return The value of the 'city' field.
    */
-  public java.lang.CharSequence getCity() {
+  public CharSequence getCity() {
     return city;
   }
 
@@ -195,7 +195,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'city' field.
    * @param value the value to set.
    */
-  public void setCity(java.lang.CharSequence value) {
+  public void setCity(CharSequence value) {
     this.city = value;
   }
 
@@ -203,7 +203,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'country' field.
    * @return The value of the 'country' field.
    */
-  public java.lang.CharSequence getCountry() {
+  public CharSequence getCountry() {
     return country;
   }
 
@@ -212,7 +212,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'country' field.
    * @param value the value to set.
    */
-  public void setCountry(java.lang.CharSequence value) {
+  public void setCountry(CharSequence value) {
     this.country = value;
   }
 
@@ -220,7 +220,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'code' field.
    * @return The value of the 'code' field.
    */
-  public java.lang.CharSequence getCode() {
+  public CharSequence getCode() {
     return code;
   }
 
@@ -229,7 +229,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'code' field.
    * @param value the value to set.
    */
-  public void setCode(java.lang.CharSequence value) {
+  public void setCode(CharSequence value) {
     this.code = value;
   }
 
@@ -237,7 +237,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'latitude' field.
    * @return The value of the 'latitude' field.
    */
-  public java.lang.Double getLatitude() {
+  public Double getLatitude() {
     return latitude;
   }
 
@@ -246,7 +246,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'latitude' field.
    * @param value the value to set.
    */
-  public void setLatitude(java.lang.Double value) {
+  public void setLatitude(Double value) {
     this.latitude = value;
   }
 
@@ -254,7 +254,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'longitude' field.
    * @return The value of the 'longitude' field.
    */
-  public java.lang.Double getLongitude() {
+  public Double getLongitude() {
     return longitude;
   }
 
@@ -263,7 +263,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'longitude' field.
    * @param value the value to set.
    */
-  public void setLongitude(java.lang.Double value) {
+  public void setLongitude(Double value) {
     this.longitude = value;
   }
 
@@ -271,7 +271,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'tz' field.
    * @return The value of the 'tz' field.
    */
-  public java.lang.CharSequence getTz() {
+  public CharSequence getTz() {
     return tz;
   }
 
@@ -280,7 +280,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'tz' field.
    * @param value the value to set.
    */
-  public void setTz(java.lang.CharSequence value) {
+  public void setTz(CharSequence value) {
     this.tz = value;
   }
 
@@ -288,7 +288,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'departuresLast5Minutes' field.
    * @return The value of the 'departuresLast5Minutes' field.
    */
-  public java.lang.Long getDeparturesLast5Minutes() {
+  public Long getDeparturesLast5Minutes() {
     return departuresLast5Minutes;
   }
 
@@ -297,7 +297,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'departuresLast5Minutes' field.
    * @param value the value to set.
    */
-  public void setDeparturesLast5Minutes(java.lang.Long value) {
+  public void setDeparturesLast5Minutes(Long value) {
     this.departuresLast5Minutes = value;
   }
 
@@ -305,7 +305,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'canceledFlightsLast5Minutes' field.
    * @return The value of the 'canceledFlightsLast5Minutes' field.
    */
-  public java.lang.Long getCanceledFlightsLast5Minutes() {
+  public Long getCanceledFlightsLast5Minutes() {
     return canceledFlightsLast5Minutes;
   }
 
@@ -314,7 +314,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'canceledFlightsLast5Minutes' field.
    * @param value the value to set.
    */
-  public void setCanceledFlightsLast5Minutes(java.lang.Long value) {
+  public void setCanceledFlightsLast5Minutes(Long value) {
     this.canceledFlightsLast5Minutes = value;
   }
 
@@ -322,7 +322,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'minFlightDuration' field.
    * @return The value of the 'minFlightDuration' field.
    */
-  public java.lang.Long getMinFlightDuration() {
+  public Long getMinFlightDuration() {
     return minFlightDuration;
   }
 
@@ -331,7 +331,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'minFlightDuration' field.
    * @param value the value to set.
    */
-  public void setMinFlightDuration(java.lang.Long value) {
+  public void setMinFlightDuration(Long value) {
     this.minFlightDuration = value;
   }
 
@@ -339,7 +339,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'lastDepartureTimestamp' field.
    * @return The value of the 'lastDepartureTimestamp' field.
    */
-  public java.lang.Long getLastDepartureTimestamp() {
+  public Long getLastDepartureTimestamp() {
     return lastDepartureTimestamp;
   }
 
@@ -348,7 +348,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'lastDepartureTimestamp' field.
    * @param value the value to set.
    */
-  public void setLastDepartureTimestamp(java.lang.Long value) {
+  public void setLastDepartureTimestamp(Long value) {
     this.lastDepartureTimestamp = value;
   }
 
@@ -356,8 +356,8 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new AirportKpi RecordBuilder.
    * @return A new AirportKpi RecordBuilder
    */
-  public static radar.AirportKpi.Builder newBuilder() {
-    return new radar.AirportKpi.Builder();
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
   /**
@@ -365,11 +365,11 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new AirportKpi RecordBuilder
    */
-  public static radar.AirportKpi.Builder newBuilder(radar.AirportKpi.Builder other) {
+  public static Builder newBuilder(Builder other) {
     if (other == null) {
-      return new radar.AirportKpi.Builder();
+      return new Builder();
     } else {
-      return new radar.AirportKpi.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -378,11 +378,11 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new AirportKpi RecordBuilder
    */
-  public static radar.AirportKpi.Builder newBuilder(radar.AirportKpi other) {
+  public static Builder newBuilder(AirportKpi other) {
     if (other == null) {
-      return new radar.AirportKpi.Builder();
+      return new Builder();
     } else {
-      return new radar.AirportKpi.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -393,17 +393,17 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<AirportKpi>
     implements org.apache.avro.data.RecordBuilder<AirportKpi> {
 
-    private java.lang.CharSequence airport;
-    private java.lang.CharSequence city;
-    private java.lang.CharSequence country;
-    private java.lang.CharSequence code;
-    private java.lang.Double latitude;
-    private java.lang.Double longitude;
-    private java.lang.CharSequence tz;
-    private java.lang.Long departuresLast5Minutes;
-    private java.lang.Long canceledFlightsLast5Minutes;
-    private java.lang.Long minFlightDuration;
-    private java.lang.Long lastDepartureTimestamp;
+    private CharSequence airport;
+    private CharSequence city;
+    private CharSequence country;
+    private CharSequence code;
+    private Double latitude;
+    private Double longitude;
+    private CharSequence tz;
+    private Long departuresLast5Minutes;
+    private Long canceledFlightsLast5Minutes;
+    private Long minFlightDuration;
+    private Long lastDepartureTimestamp;
 
     /** Creates a new Builder */
     private Builder() {
@@ -414,7 +414,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(radar.AirportKpi.Builder other) {
+    private Builder(Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.airport)) {
         this.airport = data().deepCopy(fields()[0].schema(), other.airport);
@@ -466,7 +466,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing AirportKpi instance
      * @param other The existing instance to copy.
      */
-    private Builder(radar.AirportKpi other) {
+    private Builder(AirportKpi other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.airport)) {
         this.airport = data().deepCopy(fields()[0].schema(), other.airport);
@@ -518,7 +518,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'airport' field.
       * @return The value.
       */
-    public java.lang.CharSequence getAirport() {
+    public CharSequence getAirport() {
       return airport;
     }
 
@@ -528,7 +528,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'airport'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setAirport(java.lang.CharSequence value) {
+    public Builder setAirport(CharSequence value) {
       validate(fields()[0], value);
       this.airport = value;
       fieldSetFlags()[0] = true;
@@ -548,7 +548,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'airport' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearAirport() {
+    public Builder clearAirport() {
       airport = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -558,7 +558,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'city' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCity() {
+    public CharSequence getCity() {
       return city;
     }
 
@@ -568,7 +568,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'city'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setCity(java.lang.CharSequence value) {
+    public Builder setCity(CharSequence value) {
       validate(fields()[1], value);
       this.city = value;
       fieldSetFlags()[1] = true;
@@ -588,7 +588,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'city' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearCity() {
+    public Builder clearCity() {
       city = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -598,7 +598,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'country' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCountry() {
+    public CharSequence getCountry() {
       return country;
     }
 
@@ -608,7 +608,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'country'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setCountry(java.lang.CharSequence value) {
+    public Builder setCountry(CharSequence value) {
       validate(fields()[2], value);
       this.country = value;
       fieldSetFlags()[2] = true;
@@ -628,7 +628,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'country' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearCountry() {
+    public Builder clearCountry() {
       country = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -638,7 +638,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'code' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCode() {
+    public CharSequence getCode() {
       return code;
     }
 
@@ -648,7 +648,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'code'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setCode(java.lang.CharSequence value) {
+    public Builder setCode(CharSequence value) {
       validate(fields()[3], value);
       this.code = value;
       fieldSetFlags()[3] = true;
@@ -668,7 +668,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'code' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearCode() {
+    public Builder clearCode() {
       code = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -678,7 +678,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'latitude' field.
       * @return The value.
       */
-    public java.lang.Double getLatitude() {
+    public Double getLatitude() {
       return latitude;
     }
 
@@ -688,7 +688,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'latitude'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setLatitude(java.lang.Double value) {
+    public Builder setLatitude(Double value) {
       validate(fields()[4], value);
       this.latitude = value;
       fieldSetFlags()[4] = true;
@@ -708,7 +708,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'latitude' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearLatitude() {
+    public Builder clearLatitude() {
       latitude = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -718,7 +718,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'longitude' field.
       * @return The value.
       */
-    public java.lang.Double getLongitude() {
+    public Double getLongitude() {
       return longitude;
     }
 
@@ -728,7 +728,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'longitude'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setLongitude(java.lang.Double value) {
+    public Builder setLongitude(Double value) {
       validate(fields()[5], value);
       this.longitude = value;
       fieldSetFlags()[5] = true;
@@ -748,7 +748,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'longitude' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearLongitude() {
+    public Builder clearLongitude() {
       longitude = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -758,7 +758,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'tz' field.
       * @return The value.
       */
-    public java.lang.CharSequence getTz() {
+    public CharSequence getTz() {
       return tz;
     }
 
@@ -768,7 +768,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'tz'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setTz(java.lang.CharSequence value) {
+    public Builder setTz(CharSequence value) {
       validate(fields()[6], value);
       this.tz = value;
       fieldSetFlags()[6] = true;
@@ -788,7 +788,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'tz' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearTz() {
+    public Builder clearTz() {
       tz = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -798,7 +798,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'departuresLast5Minutes' field.
       * @return The value.
       */
-    public java.lang.Long getDeparturesLast5Minutes() {
+    public Long getDeparturesLast5Minutes() {
       return departuresLast5Minutes;
     }
 
@@ -808,7 +808,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'departuresLast5Minutes'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setDeparturesLast5Minutes(java.lang.Long value) {
+    public Builder setDeparturesLast5Minutes(Long value) {
       validate(fields()[7], value);
       this.departuresLast5Minutes = value;
       fieldSetFlags()[7] = true;
@@ -828,7 +828,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'departuresLast5Minutes' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearDeparturesLast5Minutes() {
+    public Builder clearDeparturesLast5Minutes() {
       departuresLast5Minutes = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -838,7 +838,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'canceledFlightsLast5Minutes' field.
       * @return The value.
       */
-    public java.lang.Long getCanceledFlightsLast5Minutes() {
+    public Long getCanceledFlightsLast5Minutes() {
       return canceledFlightsLast5Minutes;
     }
 
@@ -848,7 +848,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'canceledFlightsLast5Minutes'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setCanceledFlightsLast5Minutes(java.lang.Long value) {
+    public Builder setCanceledFlightsLast5Minutes(Long value) {
       validate(fields()[8], value);
       this.canceledFlightsLast5Minutes = value;
       fieldSetFlags()[8] = true;
@@ -868,7 +868,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'canceledFlightsLast5Minutes' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearCanceledFlightsLast5Minutes() {
+    public Builder clearCanceledFlightsLast5Minutes() {
       canceledFlightsLast5Minutes = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -878,7 +878,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'minFlightDuration' field.
       * @return The value.
       */
-    public java.lang.Long getMinFlightDuration() {
+    public Long getMinFlightDuration() {
       return minFlightDuration;
     }
 
@@ -888,7 +888,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'minFlightDuration'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setMinFlightDuration(java.lang.Long value) {
+    public Builder setMinFlightDuration(Long value) {
       validate(fields()[9], value);
       this.minFlightDuration = value;
       fieldSetFlags()[9] = true;
@@ -908,7 +908,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'minFlightDuration' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearMinFlightDuration() {
+    public Builder clearMinFlightDuration() {
       minFlightDuration = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -918,7 +918,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'lastDepartureTimestamp' field.
       * @return The value.
       */
-    public java.lang.Long getLastDepartureTimestamp() {
+    public Long getLastDepartureTimestamp() {
       return lastDepartureTimestamp;
     }
 
@@ -928,7 +928,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'lastDepartureTimestamp'.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder setLastDepartureTimestamp(java.lang.Long value) {
+    public Builder setLastDepartureTimestamp(Long value) {
       validate(fields()[10], value);
       this.lastDepartureTimestamp = value;
       fieldSetFlags()[10] = true;
@@ -948,7 +948,7 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'lastDepartureTimestamp' field.
       * @return This builder.
       */
-    public radar.AirportKpi.Builder clearLastDepartureTimestamp() {
+    public Builder clearLastDepartureTimestamp() {
       lastDepartureTimestamp = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -959,21 +959,21 @@ public class AirportKpi extends org.apache.avro.specific.SpecificRecordBase impl
     public AirportKpi build() {
       try {
         AirportKpi record = new AirportKpi();
-        record.airport = fieldSetFlags()[0] ? this.airport : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.city = fieldSetFlags()[1] ? this.city : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.country = fieldSetFlags()[2] ? this.country : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.code = fieldSetFlags()[3] ? this.code : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.latitude = fieldSetFlags()[4] ? this.latitude : (java.lang.Double) defaultValue(fields()[4]);
-        record.longitude = fieldSetFlags()[5] ? this.longitude : (java.lang.Double) defaultValue(fields()[5]);
-        record.tz = fieldSetFlags()[6] ? this.tz : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.departuresLast5Minutes = fieldSetFlags()[7] ? this.departuresLast5Minutes : (java.lang.Long) defaultValue(fields()[7]);
-        record.canceledFlightsLast5Minutes = fieldSetFlags()[8] ? this.canceledFlightsLast5Minutes : (java.lang.Long) defaultValue(fields()[8]);
-        record.minFlightDuration = fieldSetFlags()[9] ? this.minFlightDuration : (java.lang.Long) defaultValue(fields()[9]);
-        record.lastDepartureTimestamp = fieldSetFlags()[10] ? this.lastDepartureTimestamp : (java.lang.Long) defaultValue(fields()[10]);
+        record.airport = fieldSetFlags()[0] ? this.airport : (CharSequence) defaultValue(fields()[0]);
+        record.city = fieldSetFlags()[1] ? this.city : (CharSequence) defaultValue(fields()[1]);
+        record.country = fieldSetFlags()[2] ? this.country : (CharSequence) defaultValue(fields()[2]);
+        record.code = fieldSetFlags()[3] ? this.code : (CharSequence) defaultValue(fields()[3]);
+        record.latitude = fieldSetFlags()[4] ? this.latitude : (Double) defaultValue(fields()[4]);
+        record.longitude = fieldSetFlags()[5] ? this.longitude : (Double) defaultValue(fields()[5]);
+        record.tz = fieldSetFlags()[6] ? this.tz : (CharSequence) defaultValue(fields()[6]);
+        record.departuresLast5Minutes = fieldSetFlags()[7] ? this.departuresLast5Minutes : (Long) defaultValue(fields()[7]);
+        record.canceledFlightsLast5Minutes = fieldSetFlags()[8] ? this.canceledFlightsLast5Minutes : (Long) defaultValue(fields()[8]);
+        record.minFlightDuration = fieldSetFlags()[9] ? this.minFlightDuration : (Long) defaultValue(fields()[9]);
+        record.lastDepartureTimestamp = fieldSetFlags()[10] ? this.lastDepartureTimestamp : (Long) defaultValue(fields()[10]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
-      } catch (java.lang.Exception e) {
+      } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }

@@ -73,13 +73,13 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
     return DECODER.decode(b);
   }
 
-  private java.lang.CharSequence airport;
-  private java.lang.CharSequence city;
-  private java.lang.CharSequence country;
-  private java.lang.CharSequence code;
-  private java.lang.Double latitude;
-  private java.lang.Double longitude;
-  private java.lang.CharSequence tz;
+  private CharSequence airport;
+  private CharSequence city;
+  private CharSequence country;
+  private CharSequence code;
+  private Double latitude;
+  private Double longitude;
+  private CharSequence tz;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -98,7 +98,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * @param longitude The new value for longitude
    * @param tz The new value for tz
    */
-  public AirportUpdateEvent(java.lang.CharSequence airport, java.lang.CharSequence city, java.lang.CharSequence country, java.lang.CharSequence code, java.lang.Double latitude, java.lang.Double longitude, java.lang.CharSequence tz) {
+  public AirportUpdateEvent(CharSequence airport, CharSequence city, CharSequence country, CharSequence code, Double latitude, Double longitude, CharSequence tz) {
     this.airport = airport;
     this.city = city;
     this.country = country;
@@ -109,14 +109,14 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
   }
 
   @Override
-  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
+  public SpecificData getSpecificData() { return MODEL$; }
 
   @Override
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
 
   // Used by DatumWriter.  Applications should not call.
   @Override
-  public java.lang.Object get(int field$) {
+  public Object get(int field$) {
     switch (field$) {
     case 0: return airport;
     case 1: return city;
@@ -132,15 +132,15 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
   // Used by DatumReader.  Applications should not call.
   @Override
   @SuppressWarnings(value="unchecked")
-  public void put(int field$, java.lang.Object value$) {
+  public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: airport = (java.lang.CharSequence)value$; break;
-    case 1: city = (java.lang.CharSequence)value$; break;
-    case 2: country = (java.lang.CharSequence)value$; break;
-    case 3: code = (java.lang.CharSequence)value$; break;
-    case 4: latitude = (java.lang.Double)value$; break;
-    case 5: longitude = (java.lang.Double)value$; break;
-    case 6: tz = (java.lang.CharSequence)value$; break;
+    case 0: airport = (CharSequence)value$; break;
+    case 1: city = (CharSequence)value$; break;
+    case 2: country = (CharSequence)value$; break;
+    case 3: code = (CharSequence)value$; break;
+    case 4: latitude = (Double)value$; break;
+    case 5: longitude = (Double)value$; break;
+    case 6: tz = (CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -149,7 +149,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Gets the value of the 'airport' field.
    * @return The value of the 'airport' field.
    */
-  public java.lang.CharSequence getAirport() {
+  public CharSequence getAirport() {
     return airport;
   }
 
@@ -158,7 +158,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Sets the value of the 'airport' field.
    * @param value the value to set.
    */
-  public void setAirport(java.lang.CharSequence value) {
+  public void setAirport(CharSequence value) {
     this.airport = value;
   }
 
@@ -166,7 +166,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Gets the value of the 'city' field.
    * @return The value of the 'city' field.
    */
-  public java.lang.CharSequence getCity() {
+  public CharSequence getCity() {
     return city;
   }
 
@@ -175,7 +175,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Sets the value of the 'city' field.
    * @param value the value to set.
    */
-  public void setCity(java.lang.CharSequence value) {
+  public void setCity(CharSequence value) {
     this.city = value;
   }
 
@@ -183,7 +183,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Gets the value of the 'country' field.
    * @return The value of the 'country' field.
    */
-  public java.lang.CharSequence getCountry() {
+  public CharSequence getCountry() {
     return country;
   }
 
@@ -192,7 +192,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Sets the value of the 'country' field.
    * @param value the value to set.
    */
-  public void setCountry(java.lang.CharSequence value) {
+  public void setCountry(CharSequence value) {
     this.country = value;
   }
 
@@ -200,7 +200,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Gets the value of the 'code' field.
    * @return The value of the 'code' field.
    */
-  public java.lang.CharSequence getCode() {
+  public CharSequence getCode() {
     return code;
   }
 
@@ -209,7 +209,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Sets the value of the 'code' field.
    * @param value the value to set.
    */
-  public void setCode(java.lang.CharSequence value) {
+  public void setCode(CharSequence value) {
     this.code = value;
   }
 
@@ -217,7 +217,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Gets the value of the 'latitude' field.
    * @return The value of the 'latitude' field.
    */
-  public java.lang.Double getLatitude() {
+  public Double getLatitude() {
     return latitude;
   }
 
@@ -226,7 +226,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Sets the value of the 'latitude' field.
    * @param value the value to set.
    */
-  public void setLatitude(java.lang.Double value) {
+  public void setLatitude(Double value) {
     this.latitude = value;
   }
 
@@ -234,7 +234,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Gets the value of the 'longitude' field.
    * @return The value of the 'longitude' field.
    */
-  public java.lang.Double getLongitude() {
+  public Double getLongitude() {
     return longitude;
   }
 
@@ -243,7 +243,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Sets the value of the 'longitude' field.
    * @param value the value to set.
    */
-  public void setLongitude(java.lang.Double value) {
+  public void setLongitude(Double value) {
     this.longitude = value;
   }
 
@@ -251,7 +251,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Gets the value of the 'tz' field.
    * @return The value of the 'tz' field.
    */
-  public java.lang.CharSequence getTz() {
+  public CharSequence getTz() {
     return tz;
   }
 
@@ -260,7 +260,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Sets the value of the 'tz' field.
    * @param value the value to set.
    */
-  public void setTz(java.lang.CharSequence value) {
+  public void setTz(CharSequence value) {
     this.tz = value;
   }
 
@@ -268,8 +268,8 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * Creates a new AirportUpdateEvent RecordBuilder.
    * @return A new AirportUpdateEvent RecordBuilder
    */
-  public static radar.AirportUpdateEvent.Builder newBuilder() {
-    return new radar.AirportUpdateEvent.Builder();
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
   /**
@@ -277,11 +277,11 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * @param other The existing builder to copy.
    * @return A new AirportUpdateEvent RecordBuilder
    */
-  public static radar.AirportUpdateEvent.Builder newBuilder(radar.AirportUpdateEvent.Builder other) {
+  public static Builder newBuilder(Builder other) {
     if (other == null) {
-      return new radar.AirportUpdateEvent.Builder();
+      return new Builder();
     } else {
-      return new radar.AirportUpdateEvent.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -290,11 +290,11 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
    * @param other The existing instance to copy.
    * @return A new AirportUpdateEvent RecordBuilder
    */
-  public static radar.AirportUpdateEvent.Builder newBuilder(radar.AirportUpdateEvent other) {
+  public static Builder newBuilder(AirportUpdateEvent other) {
     if (other == null) {
-      return new radar.AirportUpdateEvent.Builder();
+      return new Builder();
     } else {
-      return new radar.AirportUpdateEvent.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -305,13 +305,13 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<AirportUpdateEvent>
     implements org.apache.avro.data.RecordBuilder<AirportUpdateEvent> {
 
-    private java.lang.CharSequence airport;
-    private java.lang.CharSequence city;
-    private java.lang.CharSequence country;
-    private java.lang.CharSequence code;
-    private java.lang.Double latitude;
-    private java.lang.Double longitude;
-    private java.lang.CharSequence tz;
+    private CharSequence airport;
+    private CharSequence city;
+    private CharSequence country;
+    private CharSequence code;
+    private Double latitude;
+    private Double longitude;
+    private CharSequence tz;
 
     /** Creates a new Builder */
     private Builder() {
@@ -322,7 +322,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(radar.AirportUpdateEvent.Builder other) {
+    private Builder(Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.airport)) {
         this.airport = data().deepCopy(fields()[0].schema(), other.airport);
@@ -358,7 +358,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
      * Creates a Builder by copying an existing AirportUpdateEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(radar.AirportUpdateEvent other) {
+    private Builder(AirportUpdateEvent other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.airport)) {
         this.airport = data().deepCopy(fields()[0].schema(), other.airport);
@@ -394,7 +394,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Gets the value of the 'airport' field.
       * @return The value.
       */
-    public java.lang.CharSequence getAirport() {
+    public CharSequence getAirport() {
       return airport;
     }
 
@@ -404,7 +404,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'airport'.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder setAirport(java.lang.CharSequence value) {
+    public Builder setAirport(CharSequence value) {
       validate(fields()[0], value);
       this.airport = value;
       fieldSetFlags()[0] = true;
@@ -424,7 +424,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'airport' field.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder clearAirport() {
+    public Builder clearAirport() {
       airport = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -434,7 +434,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Gets the value of the 'city' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCity() {
+    public CharSequence getCity() {
       return city;
     }
 
@@ -444,7 +444,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'city'.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder setCity(java.lang.CharSequence value) {
+    public Builder setCity(CharSequence value) {
       validate(fields()[1], value);
       this.city = value;
       fieldSetFlags()[1] = true;
@@ -464,7 +464,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'city' field.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder clearCity() {
+    public Builder clearCity() {
       city = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -474,7 +474,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Gets the value of the 'country' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCountry() {
+    public CharSequence getCountry() {
       return country;
     }
 
@@ -484,7 +484,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'country'.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder setCountry(java.lang.CharSequence value) {
+    public Builder setCountry(CharSequence value) {
       validate(fields()[2], value);
       this.country = value;
       fieldSetFlags()[2] = true;
@@ -504,7 +504,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'country' field.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder clearCountry() {
+    public Builder clearCountry() {
       country = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -514,7 +514,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Gets the value of the 'code' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCode() {
+    public CharSequence getCode() {
       return code;
     }
 
@@ -524,7 +524,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'code'.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder setCode(java.lang.CharSequence value) {
+    public Builder setCode(CharSequence value) {
       validate(fields()[3], value);
       this.code = value;
       fieldSetFlags()[3] = true;
@@ -544,7 +544,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'code' field.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder clearCode() {
+    public Builder clearCode() {
       code = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -554,7 +554,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Gets the value of the 'latitude' field.
       * @return The value.
       */
-    public java.lang.Double getLatitude() {
+    public Double getLatitude() {
       return latitude;
     }
 
@@ -564,7 +564,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'latitude'.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder setLatitude(java.lang.Double value) {
+    public Builder setLatitude(Double value) {
       validate(fields()[4], value);
       this.latitude = value;
       fieldSetFlags()[4] = true;
@@ -584,7 +584,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'latitude' field.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder clearLatitude() {
+    public Builder clearLatitude() {
       latitude = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -594,7 +594,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Gets the value of the 'longitude' field.
       * @return The value.
       */
-    public java.lang.Double getLongitude() {
+    public Double getLongitude() {
       return longitude;
     }
 
@@ -604,7 +604,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'longitude'.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder setLongitude(java.lang.Double value) {
+    public Builder setLongitude(Double value) {
       validate(fields()[5], value);
       this.longitude = value;
       fieldSetFlags()[5] = true;
@@ -624,7 +624,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'longitude' field.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder clearLongitude() {
+    public Builder clearLongitude() {
       longitude = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -634,7 +634,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Gets the value of the 'tz' field.
       * @return The value.
       */
-    public java.lang.CharSequence getTz() {
+    public CharSequence getTz() {
       return tz;
     }
 
@@ -644,7 +644,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * @param value The value of 'tz'.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder setTz(java.lang.CharSequence value) {
+    public Builder setTz(CharSequence value) {
       validate(fields()[6], value);
       this.tz = value;
       fieldSetFlags()[6] = true;
@@ -664,7 +664,7 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
       * Clears the value of the 'tz' field.
       * @return This builder.
       */
-    public radar.AirportUpdateEvent.Builder clearTz() {
+    public Builder clearTz() {
       tz = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -675,17 +675,17 @@ public class AirportUpdateEvent extends org.apache.avro.specific.SpecificRecordB
     public AirportUpdateEvent build() {
       try {
         AirportUpdateEvent record = new AirportUpdateEvent();
-        record.airport = fieldSetFlags()[0] ? this.airport : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.city = fieldSetFlags()[1] ? this.city : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.country = fieldSetFlags()[2] ? this.country : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.code = fieldSetFlags()[3] ? this.code : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.latitude = fieldSetFlags()[4] ? this.latitude : (java.lang.Double) defaultValue(fields()[4]);
-        record.longitude = fieldSetFlags()[5] ? this.longitude : (java.lang.Double) defaultValue(fields()[5]);
-        record.tz = fieldSetFlags()[6] ? this.tz : (java.lang.CharSequence) defaultValue(fields()[6]);
+        record.airport = fieldSetFlags()[0] ? this.airport : (CharSequence) defaultValue(fields()[0]);
+        record.city = fieldSetFlags()[1] ? this.city : (CharSequence) defaultValue(fields()[1]);
+        record.country = fieldSetFlags()[2] ? this.country : (CharSequence) defaultValue(fields()[2]);
+        record.code = fieldSetFlags()[3] ? this.code : (CharSequence) defaultValue(fields()[3]);
+        record.latitude = fieldSetFlags()[4] ? this.latitude : (Double) defaultValue(fields()[4]);
+        record.longitude = fieldSetFlags()[5] ? this.longitude : (Double) defaultValue(fields()[5]);
+        record.tz = fieldSetFlags()[6] ? this.tz : (CharSequence) defaultValue(fields()[6]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
-      } catch (java.lang.Exception e) {
+      } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }

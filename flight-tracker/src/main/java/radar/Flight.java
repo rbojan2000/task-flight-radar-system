@@ -73,8 +73,8 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
     return DECODER.decode(b);
   }
 
-  private radar.AirportUpdateEvent airportUpdateEvent;
-  private radar.TransformedFlight transformedFlight;
+  private AirportUpdateEvent airportUpdateEvent;
+  private TransformedFlight transformedFlight;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -88,20 +88,20 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param airportUpdateEvent The new value for airportUpdateEvent
    * @param transformedFlight The new value for transformedFlight
    */
-  public Flight(radar.AirportUpdateEvent airportUpdateEvent, radar.TransformedFlight transformedFlight) {
+  public Flight(AirportUpdateEvent airportUpdateEvent, TransformedFlight transformedFlight) {
     this.airportUpdateEvent = airportUpdateEvent;
     this.transformedFlight = transformedFlight;
   }
 
   @Override
-  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
+  public SpecificData getSpecificData() { return MODEL$; }
 
   @Override
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
 
   // Used by DatumWriter.  Applications should not call.
   @Override
-  public java.lang.Object get(int field$) {
+  public Object get(int field$) {
     switch (field$) {
     case 0: return airportUpdateEvent;
     case 1: return transformedFlight;
@@ -112,10 +112,10 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
   // Used by DatumReader.  Applications should not call.
   @Override
   @SuppressWarnings(value="unchecked")
-  public void put(int field$, java.lang.Object value$) {
+  public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: airportUpdateEvent = (radar.AirportUpdateEvent)value$; break;
-    case 1: transformedFlight = (radar.TransformedFlight)value$; break;
+    case 0: airportUpdateEvent = (AirportUpdateEvent)value$; break;
+    case 1: transformedFlight = (TransformedFlight)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -124,7 +124,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'airportUpdateEvent' field.
    * @return The value of the 'airportUpdateEvent' field.
    */
-  public radar.AirportUpdateEvent getAirportUpdateEvent() {
+  public AirportUpdateEvent getAirportUpdateEvent() {
     return airportUpdateEvent;
   }
 
@@ -133,7 +133,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'airportUpdateEvent' field.
    * @param value the value to set.
    */
-  public void setAirportUpdateEvent(radar.AirportUpdateEvent value) {
+  public void setAirportUpdateEvent(AirportUpdateEvent value) {
     this.airportUpdateEvent = value;
   }
 
@@ -141,7 +141,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'transformedFlight' field.
    * @return The value of the 'transformedFlight' field.
    */
-  public radar.TransformedFlight getTransformedFlight() {
+  public TransformedFlight getTransformedFlight() {
     return transformedFlight;
   }
 
@@ -150,7 +150,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'transformedFlight' field.
    * @param value the value to set.
    */
-  public void setTransformedFlight(radar.TransformedFlight value) {
+  public void setTransformedFlight(TransformedFlight value) {
     this.transformedFlight = value;
   }
 
@@ -158,8 +158,8 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * Creates a new Flight RecordBuilder.
    * @return A new Flight RecordBuilder
    */
-  public static radar.Flight.Builder newBuilder() {
-    return new radar.Flight.Builder();
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
   /**
@@ -167,11 +167,11 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing builder to copy.
    * @return A new Flight RecordBuilder
    */
-  public static radar.Flight.Builder newBuilder(radar.Flight.Builder other) {
+  public static Builder newBuilder(Builder other) {
     if (other == null) {
-      return new radar.Flight.Builder();
+      return new Builder();
     } else {
-      return new radar.Flight.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -180,11 +180,11 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing instance to copy.
    * @return A new Flight RecordBuilder
    */
-  public static radar.Flight.Builder newBuilder(radar.Flight other) {
+  public static Builder newBuilder(Flight other) {
     if (other == null) {
-      return new radar.Flight.Builder();
+      return new Builder();
     } else {
-      return new radar.Flight.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -195,10 +195,10 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Flight>
     implements org.apache.avro.data.RecordBuilder<Flight> {
 
-    private radar.AirportUpdateEvent airportUpdateEvent;
-    private radar.AirportUpdateEvent.Builder airportUpdateEventBuilder;
-    private radar.TransformedFlight transformedFlight;
-    private radar.TransformedFlight.Builder transformedFlightBuilder;
+    private AirportUpdateEvent airportUpdateEvent;
+    private AirportUpdateEvent.Builder airportUpdateEventBuilder;
+    private TransformedFlight transformedFlight;
+    private TransformedFlight.Builder transformedFlightBuilder;
 
     /** Creates a new Builder */
     private Builder() {
@@ -209,21 +209,21 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(radar.Flight.Builder other) {
+    private Builder(Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.airportUpdateEvent)) {
         this.airportUpdateEvent = data().deepCopy(fields()[0].schema(), other.airportUpdateEvent);
         fieldSetFlags()[0] = other.fieldSetFlags()[0];
       }
       if (other.hasAirportUpdateEventBuilder()) {
-        this.airportUpdateEventBuilder = radar.AirportUpdateEvent.newBuilder(other.getAirportUpdateEventBuilder());
+        this.airportUpdateEventBuilder = AirportUpdateEvent.newBuilder(other.getAirportUpdateEventBuilder());
       }
       if (isValidValue(fields()[1], other.transformedFlight)) {
         this.transformedFlight = data().deepCopy(fields()[1].schema(), other.transformedFlight);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
       if (other.hasTransformedFlightBuilder()) {
-        this.transformedFlightBuilder = radar.TransformedFlight.newBuilder(other.getTransformedFlightBuilder());
+        this.transformedFlightBuilder = TransformedFlight.newBuilder(other.getTransformedFlightBuilder());
       }
     }
 
@@ -231,7 +231,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing Flight instance
      * @param other The existing instance to copy.
      */
-    private Builder(radar.Flight other) {
+    private Builder(Flight other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.airportUpdateEvent)) {
         this.airportUpdateEvent = data().deepCopy(fields()[0].schema(), other.airportUpdateEvent);
@@ -249,7 +249,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'airportUpdateEvent' field.
       * @return The value.
       */
-    public radar.AirportUpdateEvent getAirportUpdateEvent() {
+    public AirportUpdateEvent getAirportUpdateEvent() {
       return airportUpdateEvent;
     }
 
@@ -259,7 +259,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'airportUpdateEvent'.
       * @return This builder.
       */
-    public radar.Flight.Builder setAirportUpdateEvent(radar.AirportUpdateEvent value) {
+    public Builder setAirportUpdateEvent(AirportUpdateEvent value) {
       validate(fields()[0], value);
       this.airportUpdateEventBuilder = null;
       this.airportUpdateEvent = value;
@@ -279,12 +279,12 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'airportUpdateEvent' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public radar.AirportUpdateEvent.Builder getAirportUpdateEventBuilder() {
+    public AirportUpdateEvent.Builder getAirportUpdateEventBuilder() {
       if (airportUpdateEventBuilder == null) {
         if (hasAirportUpdateEvent()) {
-          setAirportUpdateEventBuilder(radar.AirportUpdateEvent.newBuilder(airportUpdateEvent));
+          setAirportUpdateEventBuilder(AirportUpdateEvent.newBuilder(airportUpdateEvent));
         } else {
-          setAirportUpdateEventBuilder(radar.AirportUpdateEvent.newBuilder());
+          setAirportUpdateEventBuilder(AirportUpdateEvent.newBuilder());
         }
       }
       return airportUpdateEventBuilder;
@@ -296,7 +296,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
      * @return This builder.
      */
 
-    public radar.Flight.Builder setAirportUpdateEventBuilder(radar.AirportUpdateEvent.Builder value) {
+    public Builder setAirportUpdateEventBuilder(AirportUpdateEvent.Builder value) {
       clearAirportUpdateEvent();
       airportUpdateEventBuilder = value;
       return this;
@@ -314,7 +314,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'airportUpdateEvent' field.
       * @return This builder.
       */
-    public radar.Flight.Builder clearAirportUpdateEvent() {
+    public Builder clearAirportUpdateEvent() {
       airportUpdateEvent = null;
       airportUpdateEventBuilder = null;
       fieldSetFlags()[0] = false;
@@ -325,7 +325,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'transformedFlight' field.
       * @return The value.
       */
-    public radar.TransformedFlight getTransformedFlight() {
+    public TransformedFlight getTransformedFlight() {
       return transformedFlight;
     }
 
@@ -335,7 +335,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'transformedFlight'.
       * @return This builder.
       */
-    public radar.Flight.Builder setTransformedFlight(radar.TransformedFlight value) {
+    public Builder setTransformedFlight(TransformedFlight value) {
       validate(fields()[1], value);
       this.transformedFlightBuilder = null;
       this.transformedFlight = value;
@@ -355,12 +355,12 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
      * Gets the Builder instance for the 'transformedFlight' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public radar.TransformedFlight.Builder getTransformedFlightBuilder() {
+    public TransformedFlight.Builder getTransformedFlightBuilder() {
       if (transformedFlightBuilder == null) {
         if (hasTransformedFlight()) {
-          setTransformedFlightBuilder(radar.TransformedFlight.newBuilder(transformedFlight));
+          setTransformedFlightBuilder(TransformedFlight.newBuilder(transformedFlight));
         } else {
-          setTransformedFlightBuilder(radar.TransformedFlight.newBuilder());
+          setTransformedFlightBuilder(TransformedFlight.newBuilder());
         }
       }
       return transformedFlightBuilder;
@@ -372,7 +372,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
      * @return This builder.
      */
 
-    public radar.Flight.Builder setTransformedFlightBuilder(radar.TransformedFlight.Builder value) {
+    public Builder setTransformedFlightBuilder(TransformedFlight.Builder value) {
       clearTransformedFlight();
       transformedFlightBuilder = value;
       return this;
@@ -390,7 +390,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'transformedFlight' field.
       * @return This builder.
       */
-    public radar.Flight.Builder clearTransformedFlight() {
+    public Builder clearTransformedFlight() {
       transformedFlight = null;
       transformedFlightBuilder = null;
       fieldSetFlags()[1] = false;
@@ -410,7 +410,7 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
             throw e;
           }
         } else {
-          record.airportUpdateEvent = fieldSetFlags()[0] ? this.airportUpdateEvent : (radar.AirportUpdateEvent) defaultValue(fields()[0]);
+          record.airportUpdateEvent = fieldSetFlags()[0] ? this.airportUpdateEvent : (AirportUpdateEvent) defaultValue(fields()[0]);
         }
         if (transformedFlightBuilder != null) {
           try {
@@ -420,12 +420,12 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
             throw e;
           }
         } else {
-          record.transformedFlight = fieldSetFlags()[1] ? this.transformedFlight : (radar.TransformedFlight) defaultValue(fields()[1]);
+          record.transformedFlight = fieldSetFlags()[1] ? this.transformedFlight : (TransformedFlight) defaultValue(fields()[1]);
         }
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
-      } catch (java.lang.Exception e) {
+      } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }
@@ -466,12 +466,12 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
       if (this.airportUpdateEvent == null) {
-        this.airportUpdateEvent = new radar.AirportUpdateEvent();
+        this.airportUpdateEvent = new AirportUpdateEvent();
       }
       this.airportUpdateEvent.customDecode(in);
 
       if (this.transformedFlight == null) {
-        this.transformedFlight = new radar.TransformedFlight();
+        this.transformedFlight = new TransformedFlight();
       }
       this.transformedFlight.customDecode(in);
 
@@ -480,14 +480,14 @@ public class Flight extends org.apache.avro.specific.SpecificRecordBase implemen
         switch (fieldOrder[i].pos()) {
         case 0:
           if (this.airportUpdateEvent == null) {
-            this.airportUpdateEvent = new radar.AirportUpdateEvent();
+            this.airportUpdateEvent = new AirportUpdateEvent();
           }
           this.airportUpdateEvent.customDecode(in);
           break;
 
         case 1:
           if (this.transformedFlight == null) {
-            this.transformedFlight = new radar.TransformedFlight();
+            this.transformedFlight = new TransformedFlight();
           }
           this.transformedFlight.customDecode(in);
           break;
