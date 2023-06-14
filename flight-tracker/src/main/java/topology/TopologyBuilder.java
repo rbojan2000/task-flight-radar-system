@@ -7,9 +7,12 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.kstream.*;
 
+import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.kafka.streams.kstream.KStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import radar.*;
 import serde.Serde;
 import utils.AirportKpiMapper;
@@ -18,6 +21,8 @@ import utils.TransformedFlightMapper;
 
 @NoArgsConstructor
 public class TopologyBuilder implements Serde {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TopologyBuilder.class);
 
 
     public static Topology buildTopology(Properties properties) {
@@ -44,7 +49,7 @@ public class TopologyBuilder implements Serde {
 
         transformedFlightStream
                 .filter((key, value) -> !value.getStatus().toString().equals("CANCELED"))
-//                .peek((key, value) -> System.out.println("transformedFlightStream key ".concat(key).concat(" value ").concat(value.toString())))
+                .peek((key, value) -> LOGGER.info("transformedFlightStream key ".concat(key).concat(" value ").concat(value.toString())))
                 .to(properties.getProperty("kafka.topic.radar.flights"), Produced.with(Serde.stringSerde, Serde.specificSerde(TransformedFlight.class, schemaRegistry)));
 
 
@@ -64,22 +69,27 @@ public class TopologyBuilder implements Serde {
                 );
 
 
-        KTable<String, AirportKpi> windowedAirportKpiKTable = enrichedFlightStream
+        var windowedAirportKpiKTable = enrichedFlightStream
                 .groupByKey(
                         Grouped.with(
                                 Serdes.String(),
                                 Serde.specificSerde(Flight.class, schemaRegistry))
                 )
+                .windowedBy(TimeWindows.of(Duration.ofMinutes(5L)))
                 .aggregate(
                         AirportKpi::new,
                         (key, enrichedFlight, airportKpi) -> airportKpiMapper.updateAirportKpi(enrichedFlight, airportKpi),
                         Materialized.with(Serdes.String(), Serde.specificSerde(AirportKpi.class, schemaRegistry))
 
                 );
+//                .suppress(Suppressed.untilWindowCloses(Suppressed.BufferConfig.unbounded()));
+
 
         windowedAirportKpiKTable
                 .toStream()
-                .peek((key, value) -> System.out.println("windowedAirportKpiKTable key ".concat(key).concat(" value ").concat(value.toString()))).to(properties.getProperty("radar.airports.kpi"), Produced.with(Serde.stringSerde, Serde.specificSerde(AirportKpi.class, schemaRegistry)));
+                .peek((key, value) -> LOGGER.info("windowedAirportKpiKTable key ".concat(key.key()).concat(" value ").concat(value.toString())))
+                .map((key, value) -> KeyValue.pair(key.key(), value))
+                .to(properties.getProperty("radar.airports.kpi"), Produced.with(Serde.stringSerde, Serde.specificSerde(AirportKpi.class, schemaRegistry)));
 
         return builder.build();
     }
