@@ -37,10 +37,10 @@ public class TopologyBuilder implements Serde {
 
 
         // 1. Transformation of Flight update events
-        TransformedFlightMapper mapper = new TransformedFlightMapper();
+        TransformedFlightMapper transformedFlightMapper = new TransformedFlightMapper();
 
         KStream<String, TransformedFlight> transformedFlightStream = flightInputStream
-                .mapValues(value -> mapper.transformFlightUpdateEventToTransformedFlight(value));
+                .mapValues(value -> transformedFlightMapper.transformFlightUpdateEventToTransformedFlight(value));
 
         transformedFlightStream
                 .filter((key, value) -> !value.getStatus().toString().equals("CANCELED"))
@@ -51,11 +51,11 @@ public class TopologyBuilder implements Serde {
         // 2. Calculate Airport KPIs
         AirportKpiMapper airportKpiMapper = new AirportKpiMapper();
 
-
         KStream<String, TransformedFlight> transformedFlightStreamVithDepartureAirportCodeKEY = transformedFlightStream
                 .map((key, value) -> KeyValue.pair(value.getDepartureAirportCode().toString(), value));
 
 
+        //using starting destination as the point of view
         KStream<String, Flight> enrichedFlightStream = transformedFlightStreamVithDepartureAirportCodeKEY
                 .leftJoin(
                         airportInputStream,
@@ -79,7 +79,7 @@ public class TopologyBuilder implements Serde {
 
         windowedAirportKpiKTable
                 .toStream()
-                .peek((key, value) -> System.out.println("windowedAirportKpiKTable key ".concat(key).concat(" value ").concat(value.toString())))                .to(properties.getProperty("radar.airports.kpi"), Produced.with(Serde.stringSerde, Serde.specificSerde(AirportKpi.class, schemaRegistry)));
+                .peek((key, value) -> System.out.println("windowedAirportKpiKTable key ".concat(key).concat(" value ").concat(value.toString()))).to(properties.getProperty("radar.airports.kpi"), Produced.with(Serde.stringSerde, Serde.specificSerde(AirportKpi.class, schemaRegistry)));
 
         return builder.build();
     }

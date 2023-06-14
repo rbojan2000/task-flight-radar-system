@@ -6,17 +6,6 @@ import radar.Flight;
 
 public class AirportKpiMapper {
 
-    public  AirportKpi updateAirportKpi(Flight enrichedFlight, AirportKpi airportKpi) {
-        updateAirportInfo(enrichedFlight, airportKpi);
-        updateDeparturesLast5Minutes(enrichedFlight, airportKpi);
-        updateCanceledFlightsLast5Minutes(enrichedFlight, airportKpi);
-        updateMinFlightDuration(enrichedFlight, airportKpi);
-        updateLastDepartureTimestamp(enrichedFlight, airportKpi);
-
-        return airportKpi;
-    }
-
-
     private static void updateAirportInfo(Flight enrichedFlight, AirportKpi airportKpi) {
         AirportUpdateEvent airportUpdateEvent = enrichedFlight.getAirportUpdateEvent();
         airportKpi.setCode(airportUpdateEvent.getCode());
@@ -52,7 +41,7 @@ public class AirportKpiMapper {
         if (isLanded(enrichedFlight)) {
             Long minFlightDuration = airportKpi.getMinFlightDuration();
             long enrichedFlightDuration = enrichedFlight.getTransformedFlight().getDuration();
-            if (minFlightDuration == null || enrichedFlightDuration < minFlightDuration) {
+            if (minFlightDuration == null || minFlightDuration == 0 || enrichedFlightDuration < minFlightDuration) {
                 airportKpi.setMinFlightDuration(enrichedFlightDuration);
             }
         }
@@ -79,5 +68,15 @@ public class AirportKpiMapper {
     private static boolean isLanded(Flight enrichedFlight) {
         String status = enrichedFlight.getTransformedFlight().getStatus().toString();
         return status.equals("LANDED");
+    }
+
+    public AirportKpi updateAirportKpi(Flight enrichedFlight, AirportKpi airportKpi) {
+        updateAirportInfo(enrichedFlight, airportKpi);
+        updateDeparturesLast5Minutes(enrichedFlight, airportKpi);
+        updateCanceledFlightsLast5Minutes(enrichedFlight, airportKpi);
+        updateMinFlightDuration(enrichedFlight, airportKpi);
+        updateLastDepartureTimestamp(enrichedFlight, airportKpi);
+
+        return airportKpi;
     }
 }

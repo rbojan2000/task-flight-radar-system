@@ -8,6 +8,17 @@ import java.time.Instant;
 
 public class TransformedFlightMapper {
 
+    public static String extractArrivalAirportCode(String inputString) {
+        int startIndex = inputString.lastIndexOf("(") + 1;
+        int endIndex = inputString.lastIndexOf(")");
+
+        if (startIndex >= 0 && endIndex >= 0 && endIndex > startIndex) {
+            return inputString.substring(startIndex, endIndex);
+        }
+
+        return null;
+    }
+
     public TransformedFlight transformFlightUpdateEventToTransformedFlight(FlightUpdateEvent flightUpdateEvent) {
 
         TransformedFlight transformedFlight = new TransformedFlight();
@@ -46,17 +57,6 @@ public class TransformedFlightMapper {
     public String extractDepartureAirportCode(String inputString) {
         int startIndex = inputString.indexOf("(") + 1;
         int endIndex = inputString.indexOf(")");
-
-        if (startIndex >= 0 && endIndex >= 0 && endIndex > startIndex) {
-            return inputString.substring(startIndex, endIndex);
-        }
-
-        return null;
-    }
-
-    public static String extractArrivalAirportCode(String inputString) {
-        int startIndex = inputString.lastIndexOf("(") + 1;
-        int endIndex = inputString.lastIndexOf(")");
 
         if (startIndex >= 0 && endIndex >= 0 && endIndex > startIndex) {
             return inputString.substring(startIndex, endIndex);
