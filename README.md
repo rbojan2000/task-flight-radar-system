@@ -1,3 +1,16 @@
+# Flight Tracker
+
+Flight Tracker is a solution based on stream processing using Apache Kafka Streams. It provides real-time tracking and processing of flight update events, along with the ability to calculate Airport KPIs (Key Performance Indicators).
+
+## Topology
+![download](https://github.com/rbojan2000/task-flight-radar-system/assets/93132257/54984fe9-1834-48b9-8f44-1bb4de204f90)
+
+## Starting application
+Flight-tracker application can be started via IDE or with command mvn compile exec:java -Dexec.mainClass=Runner.
+
+
+
+
 # Flight Radar
 
 The Flight Radar task involves collecting and analyzing real-time Europe flight
