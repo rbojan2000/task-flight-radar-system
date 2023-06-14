@@ -12,6 +12,7 @@ import java.util.Properties;
 import org.apache.kafka.streams.kstream.KStream;
 import radar.*;
 import serde.Serde;
+import utils.AirportKpiMapper;
 import utils.TimestampExtractor;
 import utils.TransformedFlightMapper;
 
@@ -27,7 +28,8 @@ public class TopologyBuilder implements Serde {
         KStream<String, FlightUpdateEvent> flightInputStream = builder.stream(
                 properties.getProperty("kafka.topic.flight.update.events"),
                 Consumed.with(Serde.stringSerde, Serde.specificSerde(FlightUpdateEvent.class, schemaRegistry))
-                        .withTimestampExtractor(new TimestampExtractor()));
+                        .withTimestampExtractor(new TimestampExtractor())
+        );
 
         GlobalKTable<String, AirportUpdateEvent> airportInputStream = builder.globalTable(
                 properties.getProperty("kafka.topic.airport.update.events"),
@@ -41,11 +43,14 @@ public class TopologyBuilder implements Serde {
                 .mapValues(value -> mapper.transformFlightUpdateEventToTransformedFlight(value));
 
         transformedFlightStream
-                .peek((key, value) -> System.out.println("transformedFlightStream key " + key + " value " + value))
+                .filter((key, value) -> !value.getStatus().toString().equals("CANCELED"))
+//                .peek((key, value) -> System.out.println("transformedFlightStream key ".concat(key).concat(" value ").concat(value.toString())))
                 .to(properties.getProperty("kafka.topic.radar.flights"), Produced.with(Serde.stringSerde, Serde.specificSerde(TransformedFlight.class, schemaRegistry)));
 
 
         // 2. Calculate Airport KPIs
+        AirportKpiMapper airportKpiMapper = new AirportKpiMapper();
+
 
         KStream<String, TransformedFlight> transformedFlightStreamVithDepartureAirportCodeKEY = transformedFlightStream
                 .map((key, value) -> KeyValue.pair(value.getDepartureAirportCode().toString(), value));
@@ -67,56 +72,15 @@ public class TopologyBuilder implements Serde {
                 )
                 .aggregate(
                         AirportKpi::new,
-                        (key, enrichedFlight, airportKpi) -> updateAirportKpi(enrichedFlight, airportKpi),
+                        (key, enrichedFlight, airportKpi) -> airportKpiMapper.updateAirportKpi(enrichedFlight, airportKpi),
                         Materialized.with(Serdes.String(), Serde.specificSerde(AirportKpi.class, schemaRegistry))
 
                 );
 
         windowedAirportKpiKTable
                 .toStream()
-                .peek((key, value) -> System.out.println("key " + key + "value " + value))
-                .to(properties.getProperty("radar.airports.kpi"), Produced.with(Serde.stringSerde, Serde.specificSerde(AirportKpi.class, schemaRegistry)));
+                .peek((key, value) -> System.out.println("windowedAirportKpiKTable key ".concat(key).concat(" value ").concat(value.toString())))                .to(properties.getProperty("radar.airports.kpi"), Produced.with(Serde.stringSerde, Serde.specificSerde(AirportKpi.class, schemaRegistry)));
 
         return builder.build();
-    }
-
-    private static AirportKpi updateAirportKpi(Flight enrichedFlight, AirportKpi airportKpi) {
-        airportKpi.setCode(enrichedFlight.getAirportUpdateEvent().getCode());
-        airportKpi.setAirport(enrichedFlight.getAirportUpdateEvent().getAirport());
-        airportKpi.setTz(enrichedFlight.getAirportUpdateEvent().getTz());
-        airportKpi.setLongitude(enrichedFlight.getAirportUpdateEvent().getLongitude());
-        airportKpi.setLatitude(enrichedFlight.getAirportUpdateEvent().getLatitude());
-        airportKpi.setCountry(enrichedFlight.getAirportUpdateEvent().getCountry());
-        airportKpi.setAirport(enrichedFlight.getAirportUpdateEvent().getAirport());
-        airportKpi.setCity(enrichedFlight.getAirportUpdateEvent().getCity());
-
-        if (!enrichedFlight.getTransformedFlight().getStatus().equals("SCHEDULED")
-                && !enrichedFlight.getTransformedFlight().getStatus().equals("LANDED")) {
-
-            Long departuresLast5Minutes = airportKpi.getDeparturesLast5Minutes();
-            airportKpi.setDeparturesLast5Minutes(
-                    departuresLast5Minutes != null ? departuresLast5Minutes + 1 : 1L
-            );
-        }
-
-        if (enrichedFlight.getTransformedFlight().getStatus().equals("CANCELED")) {
-
-            Long canceledFlightsLast5Minutes = airportKpi.getCanceledFlightsLast5Minutes();
-            airportKpi.setCanceledFlightsLast5Minutes(
-                    canceledFlightsLast5Minutes != null ? canceledFlightsLast5Minutes + 1 : 1L
-            );
-        }
-
-        Long minFlightDuration = airportKpi.getMinFlightDuration();
-        if (enrichedFlight.getTransformedFlight().getStatus().equals("LANDED") && (minFlightDuration == null || enrichedFlight.getTransformedFlight().getDuration() < minFlightDuration)) {
-            airportKpi.setMinFlightDuration(Long.valueOf(enrichedFlight.getTransformedFlight().getDuration()));
-        }
-
-        Long lastDepartureTimestamp = airportKpi.getLastDepartureTimestamp();
-        if (lastDepartureTimestamp == null || enrichedFlight.getTransformedFlight().getDepartureTimestamp() > lastDepartureTimestamp) {
-            airportKpi.setLastDepartureTimestamp(enrichedFlight.getTransformedFlight().getDepartureTimestamp());
-        }
-
-        return airportKpi;
     }
 }
