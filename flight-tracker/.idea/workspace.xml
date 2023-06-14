@@ -5,47 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="858403c6-4198-476e-8103-8bb74eb1dc66" name="Changes" comment="Added producer">
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.AirportUpdateEvent.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.FlightUpdateEvent.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.TransformedFlight.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/serde/Serde.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/TransformedFlightMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../infrastructure/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../infrastructure/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/Runner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/configuration/Configuration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/model/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/parser/TestParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/producer/TestProducer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/actions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/scripts/create-topics.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/Runner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/configuration/Configuration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/model/JsonSerde.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/model/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/topology/TestTopology.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/resources/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/test/java/TopologyTest.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/avro/AirportKpi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/radar/AirportKpi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/topology/TopologyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/topology/TopologyBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TransformedFlightMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TransformedFlightMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,26 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bojan/Desktop/task-flight-radar-system/flight-tracker&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/bojan/Desktop/task-flight-radar-system/flight-tracker/src/main/avro",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/avro" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="radar" />
       <recent name="model" />
     </key>
   </component>
@@ -184,18 +149,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/topology/TopologyBuilder.java</url>
-          <line>18</line>
+          <line>23</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TopologyTest.java</url>
           <line>75</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/utils/TransformedFlightMapper.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

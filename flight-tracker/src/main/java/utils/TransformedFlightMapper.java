@@ -26,11 +26,7 @@ public class TransformedFlightMapper {
         transformedFlight.setArrivalTimestamp(flightUpdateEvent.getSTA());
         transformedFlight.setDepartureTimestamp(flightUpdateEvent.getSTD());
 
-        System.out.println("flight update ev : " + flightUpdateEvent);
-        System.out.println("transformed      : " + transformedFlight);
-
-
-        return null;
+        return transformedFlight;
     }
 
     private String extractStartPlaceFromDestination(String destination) {
