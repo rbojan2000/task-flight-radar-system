@@ -40,9 +40,9 @@ services:
     volumes:
       - ./scripts:/scripts
       
-  flight-radar:
+  test-listener:
     build: ../test-listener/
     container_name: test-listener
     restart: always
     depends_on:
-      - kafka
+      - kafka-create-topics

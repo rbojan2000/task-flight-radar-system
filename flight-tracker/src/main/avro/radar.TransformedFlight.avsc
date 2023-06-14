@@ -1,0 +1,59 @@
+{
+  "type": "record",
+  "name": "TransformedFlight",
+  "namespace": "radar",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "date",
+      "type": "string"
+    },
+    {
+      "name": "from",
+      "type": "string"
+    },
+    {
+      "name": "departureAirportCode",
+      "type": "string"
+    },
+    {
+      "name": "arrivalAirportCode",
+      "type": "string"
+    },
+    {
+      "name": "departureTime",
+      "type": "string"
+    },
+    {
+      "name": "arrivalTime",
+      "type": "string"
+    },
+    {
+      "name": "departureTimestamp",
+      "type": "long"
+    },
+    {
+      "name": "arrivalTimestamp",
+      "type": "long"
+    },
+    {
+      "name": "duration",
+      "type": "int"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "gate",
+      "type": "string"
+    },
+    {
+      "name": "airline",
+      "type": "string"
+    }
+  ]
+}
