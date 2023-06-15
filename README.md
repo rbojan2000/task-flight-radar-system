@@ -1,4 +1,4 @@
-## Table of contents
+# Table of contents
 * [Flight Radar](#flight-radar)
 * [Flight Tracker](#flight-tracker)
 
