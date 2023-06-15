@@ -182,7 +182,7 @@ Flight Tracker is a solution based on stream processing using Apache Kafka Strea
 
 
 ## Topology
-![topology](https://github.com/rbojan2000/task-flight-radar-system/assets/93132257/1dc0a1bc-f777-49ed-8510-fe3cb275ba71)
+![topology](https://github.com/rbojan2000/task-flight-radar-system/assets/93132257/28ced86a-33fd-4396-9a01-c753ab480f1e)
 
 ## Implemented tasks
  ### 1. Transformation of Flight update events:
