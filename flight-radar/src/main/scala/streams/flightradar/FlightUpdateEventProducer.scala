@@ -10,7 +10,7 @@ case class FlightUpdateEventProducer(airports: Seq[AirportUpdateEvent])(implicit
     with FlightGenerator
     with LazyLogging {
 
-  final val TOTAL_MESSAGES: Int = 10
+  final val TOTAL_MESSAGES: Int = 5000
   val producer = new KafkaProducer[String, FlightUpdateEvent](config.streamProperties)
 
   override def run(): Unit =
