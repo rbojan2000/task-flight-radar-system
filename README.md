@@ -1,6 +1,10 @@
 # Table of contents
 * [Flight Radar](#flight-radar)
 * [Flight Tracker](#flight-tracker)
+  * [Topology](#topology)
+  * [Implemented tasks](*implemented-tasks)
+  * [Scalling application](*scaling-application)
+  * [Starting application](*starting-application)
 
 
 # Flight Radar
