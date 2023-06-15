@@ -7,15 +7,15 @@ Flight Tracker is a solution based on stream processing using Apache Kafka Strea
 ![topology](https://github.com/rbojan2000/task-flight-radar-system/assets/93132257/5ff16875-10ba-416a-a058-11bd9bc20ec8)
 
 ## Implemented tasks
- ### Transformation of Flight update events:
+ ### 1. Transformation of Flight update events:
  - Transformation of Flight update events: Flight update events are consumed from a Kafka topic and transformed into a standardized format (TransformedFlight) using the TransformedFlightMapper class. The transformed flight data is then sent to the "radar.flights" Kafka topic.
 
- ### Calculate Airport KPIs
+ ### 2. Calculate Airport KPIs
  - The transformed flight stream is enriched with airport information by joining it with a global table of airport update events. Using the starting destination as the point of view, airport KPIs are calculated based on the flight data within 5-minute time windows. The aggregated KPIs are stored in a windowed key-value store and then emitted to the "radar.airports.kpi" Kafka topic.
  - To enable windowing based on the departure timestamp (`STD`), a custom `TimestampExtractor` is used. The `TimestampExtractor` extracts the departure timestamp from the flight update event and assigns it as the event timestamp for windowing purposes.
 
 
-### Bonus
+### 3. Bonus
  - To reduce the number of output messages on the "radar.airports.kpi" topic, a delay of 30 seconds is introduced using the suppress operator. The aggregated KPIs are buffered and emitted only after the specified time delay.
 
 ## Scaling Application
