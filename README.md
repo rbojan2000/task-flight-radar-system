@@ -187,6 +187,10 @@ Flight Tracker is a solution based on stream processing using Apache Kafka Strea
 ## Implemented tasks
  ### 1. Transformation of Flight update events:
  - Transformation of Flight update events: Flight update events are consumed from a Kafka topic and transformed into a standardized format (TransformedFlight) using the TransformedFlightMapper class. The transformed flight data is then sent to the "radar.flights" Kafka topic.
+     #### Tests
+      - shouldProduceFlightEventIntoTransformedFlightTestOutputTopic(): Verifies that a flight event is correctly transformed and produced to the "radar.flights" Kafka topic.
+      - shouldNOTProduceFlightEventIntoTransformedFlightTestOutputTopic(): Verifies that a flight event with a status of "CANCELED" is not produced to the "radar.flights" Kafka topic.
+      - transformFlightUpdateEventToTransformedFlightTest(): Verifies the correctness of the transformation logic by comparing the expected TransformedFlight object with the actual transformed flight obtained from the TransformedFlightMapper class.
 
  ### 2. Calculate Airport KPIs
  - The transformed flight stream is enriched with airport information by joining it with a global table of airport update events. Using the starting destination as the point of view, airport KPIs are calculated based on the flight data within 5-minute time windows. The aggregated KPIs are stored in a windowed key-value store and then emitted to the "radar.airports.kpi" Kafka topic.
