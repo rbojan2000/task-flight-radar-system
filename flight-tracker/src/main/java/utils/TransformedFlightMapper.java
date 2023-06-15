@@ -1,6 +1,5 @@
 package utils;
 
-
 import radar.FlightUpdateEvent;
 import radar.TransformedFlight;
 
@@ -19,7 +18,7 @@ public class TransformedFlightMapper {
         return null;
     }
 
-    public TransformedFlight transformFlightUpdateEventToTransformedFlight(FlightUpdateEvent flightUpdateEvent) {
+    public static TransformedFlight transformFlightUpdateEventToTransformedFlight(FlightUpdateEvent flightUpdateEvent) {
 
         TransformedFlight transformedFlight = new TransformedFlight();
 
@@ -40,21 +39,21 @@ public class TransformedFlightMapper {
         return transformedFlight;
     }
 
-    private String extractStartPlaceFromDestination(String destination) {
+    private static String extractStartPlaceFromDestination(String destination) {
         return destination.split("->")[0];
     }
 
-    private String formatFlightTime(long arrivalTimestamp) {
+    private static String formatFlightTime(long arrivalTimestamp) {
         Instant instant = Instant.ofEpochMilli(arrivalTimestamp);
         return instant.toString();
     }
 
-    private int calculateDuration(long departureTimestamp, long arrivalTimestamp) {
+    private static int calculateDuration(long departureTimestamp, long arrivalTimestamp) {
         long durationInMillis = arrivalTimestamp - departureTimestamp;
         return (int) (durationInMillis / (1000 * 60)); // Convert milliseconds to minutes
     }
 
-    public String extractDepartureAirportCode(String inputString) {
+    private static String extractDepartureAirportCode(String inputString) {
         int startIndex = inputString.indexOf("(") + 1;
         int endIndex = inputString.indexOf(")");
 

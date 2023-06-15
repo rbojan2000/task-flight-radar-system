@@ -5,51 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="858403c6-4198-476e-8103-8bb74eb1dc66" name="Changes" comment="Added producer">
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.AirportKpi.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.AirportUpdateEvent.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.Flight.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.FlightUpdateEvent.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/avro/radar.TransformedFlight.avsc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/FlightDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/serde/Serde.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/TimestampExtractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/TransformedFlightMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../infrastructure/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../infrastructure/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/Runner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/configuration/Configuration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/model/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/parser/TestParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/java/producer/TestProducer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/actions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-listener/src/main/resources/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/scripts/create-topics.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/Runner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/configuration/Configuration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/model/JsonSerde.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/model/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/java/topology/TestTopology.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/main/resources/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test-tracker/src/test/java/TopologyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/topology/TopologyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/topology/TopologyBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/AirportKpiMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/AirportKpiMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TransformedFlightMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TransformedFlightMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/bojan/Desktop/task-flight-radar-system",
+    "last_opened_file_path": "/home/bojan/Desktop/taskkk/flight-tracker",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -186,11 +145,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/topology/TopologyBuilder.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TopologyTest.java</url>
           <line>75</line>
