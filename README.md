@@ -1,3 +1,8 @@
+## Table of contents
+* [Flight Radar](#flight-radar)
+* [Flight Tracker](#flight-tracker)
+
+
 # Flight Radar
 
 The Flight Radar task involves collecting and analyzing real-time Europe flight
