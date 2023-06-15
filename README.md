@@ -1,35 +1,3 @@
-# Flight Tracker
-
-Flight Tracker is a solution based on stream processing using Apache Kafka Streams. It provides real-time tracking and processing of flight update events, along with the ability to calculate Airport KPIs (Key Performance Indicators).
-
-
-## Topology
-![topology](https://github.com/rbojan2000/task-flight-radar-system/assets/93132257/1dc0a1bc-f777-49ed-8510-fe3cb275ba71)
-
-## Implemented tasks
- ### 1. Transformation of Flight update events:
- - Transformation of Flight update events: Flight update events are consumed from a Kafka topic and transformed into a standardized format (TransformedFlight) using the TransformedFlightMapper class. The transformed flight data is then sent to the "radar.flights" Kafka topic.
-
- ### 2. Calculate Airport KPIs
- - The transformed flight stream is enriched with airport information by joining it with a global table of airport update events. Using the starting destination as the point of view, airport KPIs are calculated based on the flight data within 5-minute time windows. The aggregated KPIs are stored in a windowed key-value store and then emitted to the "radar.airports.kpi" Kafka topic.
- - To enable windowing based on the departure timestamp (`STD`), a custom `TimestampExtractor` is used. The `TimestampExtractor` extracts the departure timestamp from the flight update event and assigns it as the event timestamp for windowing purposes.
-
-
-### 3. Bonus
- - To reduce the number of output messages on the "radar.airports.kpi" topic, a delay of 30 seconds is introduced using the suppress operator. The aggregated KPIs are buffered and emitted only after the specified time delay.
-
-## Scaling Application
- - To scale, you can run multiple instances of the application. Each instance will process a subset of Kafka partitions, providing parallel processing and increased throughput. 
-
- - Before starting each instance, make sure to update the `kafka.application.id` property in the `application.properties` file to a unique identifier. This ensures that each instance has a distinct application ID and avoids conflicts when multiple instances are running.
-
- - Since each Kafka topic --partitions 3, you can run up to 3 instances of the application for optimal scalability.
-
-
-## Starting application
-Flight-tracker application can be started via IDE or with command mvn compile exec:java -Dexec.mainClass=Runner.
-
-
 # Flight Radar
 
 The Flight Radar task involves collecting and analyzing real-time Europe flight
@@ -196,3 +164,37 @@ Remember that simple is better than complex, and complex is better than
 complicated.
 
 Good luck & have fun!
+
+
+
+# Flight Tracker
+
+Flight Tracker is a solution based on stream processing using Apache Kafka Streams. It provides real-time tracking and processing of flight update events, along with the ability to calculate Airport KPIs (Key Performance Indicators).
+
+
+## Topology
+![topology](https://github.com/rbojan2000/task-flight-radar-system/assets/93132257/1dc0a1bc-f777-49ed-8510-fe3cb275ba71)
+
+## Implemented tasks
+ ### 1. Transformation of Flight update events:
+ - Transformation of Flight update events: Flight update events are consumed from a Kafka topic and transformed into a standardized format (TransformedFlight) using the TransformedFlightMapper class. The transformed flight data is then sent to the "radar.flights" Kafka topic.
+
+ ### 2. Calculate Airport KPIs
+ - The transformed flight stream is enriched with airport information by joining it with a global table of airport update events. Using the starting destination as the point of view, airport KPIs are calculated based on the flight data within 5-minute time windows. The aggregated KPIs are stored in a windowed key-value store and then emitted to the "radar.airports.kpi" Kafka topic.
+ - To enable windowing based on the departure timestamp (`STD`), a custom `TimestampExtractor` is used. The `TimestampExtractor` extracts the departure timestamp from the flight update event and assigns it as the event timestamp for windowing purposes.
+
+
+### 3. Bonus
+ - To reduce the number of output messages on the "radar.airports.kpi" topic, a delay of 30 seconds is introduced using the suppress operator. The aggregated KPIs are buffered and emitted only after the specified time delay.
+
+## Scaling Application
+ - To scale, you can run multiple instances of the application. Each instance will process a subset of Kafka partitions, providing parallel processing and increased throughput. 
+
+ - Before starting each instance, make sure to update the `kafka.application.id` property in the `application.properties` file to a unique identifier. This ensures that each instance has a distinct application ID and avoids conflicts when multiple instances are running.
+
+ - Since each Kafka topic --partitions 3, you can run up to 3 instances of the application for optimal scalability.
+
+
+## Starting application
+Flight-tracker application can be started via IDE or with command mvn compile exec:java -Dexec.mainClass=Runner.
+
