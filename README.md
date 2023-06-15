@@ -18,16 +18,16 @@ Flight Tracker is a solution based on stream processing using Apache Kafka Strea
 ### Bonus
  - To reduce the number of output messages on the "radar.airports.kpi" topic, a delay of 30 seconds is introduced using the suppress operator. The aggregated KPIs are buffered and emitted only after the specified time delay.
 
-
-## Starting application
-Flight-tracker application can be started via IDE or with command mvn compile exec:java -Dexec.mainClass=Runner.
-
 ## Scaling Application
  - To scale, you can run multiple instances of the application. Each instance will process a subset of Kafka partitions, providing parallel processing and increased throughput. 
 
  - Before starting each instance, make sure to update the `kafka.application.id` property in the `application.properties` file to a unique identifier. This ensures that each instance has a distinct application ID and avoids conflicts when multiple instances are running.
 
  - Since each Kafka topic --partitions 3, you can run up to 3 instances of the application for optimal scalability.
+
+
+## Starting application
+Flight-tracker application can be started via IDE or with command mvn compile exec:java -Dexec.mainClass=Runner.
 
 
 # Flight Radar
