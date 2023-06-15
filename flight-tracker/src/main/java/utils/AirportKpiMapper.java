@@ -70,7 +70,7 @@ public class AirportKpiMapper {
         return status.equals("LANDED");
     }
 
-    public AirportKpi updateAirportKpi(Flight enrichedFlight, AirportKpi airportKpi) {
+    public static AirportKpi updateAirportKpi(Flight enrichedFlight, AirportKpi airportKpi) {
         updateAirportInfo(enrichedFlight, airportKpi);
         updateDeparturesLast5Minutes(enrichedFlight, airportKpi);
         updateCanceledFlightsLast5Minutes(enrichedFlight, airportKpi);
