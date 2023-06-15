@@ -55,7 +55,7 @@ public class TopologyBuilder implements Serde {
 
         transformedFlightStream
                 .filter((key, value) -> !value.getStatus().toString().equals("CANCELED"))
-                .peek((key, value) -> LOGGER.info("transformedFlightStream key: ".concat(key).concat(" value: ").concat(value.toString())))
+//                .peek((key, value) -> LOGGER.info("transformedFlightStream key: ".concat(key).concat(" value: ").concat(value.toString())))
                 .to(properties.getProperty("kafka.topic.radar.flights"), Produced.with(
                         Serde.stringSerde,
                         Serde.specificSerde(TransformedFlight.class, schemaRegistry)
@@ -69,12 +69,22 @@ public class TopologyBuilder implements Serde {
 
 
         // using starting destination as the point of view
+        // one that occurs avro exception in .aggregate():
+            // WARN AirportUpdateEvent is null for key: madeira value is:{"airportUpdateEvent": null, "transformedFlight": {"id": "c36435f1-e4d5-3114-9e40-f584eefb9fc6", "date": "2023-04-05", "from": "Beja (madeira)/Portugal(LPBJ)", "departureAirportCode": "madeira", "arrivalAirportCode": "EYSB", "departureTime": "2023-04-05T15:05:49.515Z", "arrivalTime": "2023-04-05T18:29:49.515Z", "departureTimestamp": 1680707149515, "arrivalTimestamp": 1680719389515, "duration": 204, "status": "LANDED", "gate": "c36", "airline": "c36435"}} (topology.TopologyBuilder:82)
+
         KStream<String, Flight> enrichedFlightStream = transformedFlightStreamWithDepartureAirportCodeKEY
                 .leftJoin(
                         airportInputStream,
                         (flightKey, transformedFlight) -> transformedFlight.getDepartureAirportCode().toString(),
                         (transformedFlight, airportUpdate) -> new Flight(airportUpdate, transformedFlight)
-                );
+                )
+                .peek((key, value) -> {
+                    if (value.getAirportUpdateEvent() == null) {
+                        LOGGER.warn("AirportUpdateEvent is null for key: ".concat(key).concat(" value is:").concat(value.toString()));
+                    }
+                })
+                .filter((key, value) -> value.getAirportUpdateEvent() != null);
+
 
 
         Duration windowDuration = Duration.ofMinutes(5L);
