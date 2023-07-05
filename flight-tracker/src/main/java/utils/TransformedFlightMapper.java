@@ -8,11 +8,16 @@ import java.time.Instant;
 public class TransformedFlightMapper {
 
     public static String extractArrivalAirportCode(String inputString) {
-        int startIndex = inputString.lastIndexOf("(") + 1;
-        int endIndex = inputString.lastIndexOf(")");
+        String[] parts = inputString.split("->");
 
-        if (startIndex >= 0 && endIndex >= 0 && endIndex > startIndex) {
-            return inputString.substring(startIndex, endIndex);
+        if (parts.length >= 1) {
+            String departureAirport = parts[1].trim();
+            int startIndex = departureAirport.lastIndexOf("(") + 1;
+            int endIndex = departureAirport.lastIndexOf(")");
+
+            if (startIndex >= 0 && endIndex >= 0 && endIndex > startIndex) {
+                return departureAirport.substring(startIndex, endIndex);
+            }
         }
 
         return null;
@@ -54,11 +59,16 @@ public class TransformedFlightMapper {
     }
 
     private static String extractDepartureAirportCode(String inputString) {
-        int startIndex = inputString.indexOf("(") + 1;
-        int endIndex = inputString.indexOf(")");
+        String[] parts = inputString.split("->");
 
-        if (startIndex >= 0 && endIndex >= 0 && endIndex > startIndex) {
-            return inputString.substring(startIndex, endIndex);
+        if (parts.length >= 1) {
+            String departureAirport = parts[0].trim();
+            int startIndex = departureAirport.lastIndexOf("(") + 1;
+            int endIndex = departureAirport.lastIndexOf(")");
+
+            if (startIndex >= 0 && endIndex >= 0 && endIndex > startIndex) {
+                return departureAirport.substring(startIndex, endIndex);
+            }
         }
 
         return null;
