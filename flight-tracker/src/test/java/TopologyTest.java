@@ -6,6 +6,8 @@ import org.apache.kafka.streams.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import radar.AirportKpi;
+import radar.AirportUpdateEvent;
 import radar.FlightUpdateEvent;
 import radar.TransformedFlight;
 import serde.Serde;
@@ -13,6 +15,8 @@ import topology.TopologyBuilder;
 import utils.TransformedFlightMapper;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.NoSuchElementException;
 import java.util.Properties;
 
@@ -24,6 +28,9 @@ public class TopologyTest {
     private final Serdes.StringSerde stringSerde = Serde.stringSerde;
     private TestInputTopic<String, FlightUpdateEvent> flightUpdateEventTestInputTopic;
     private TestOutputTopic<String, TransformedFlight> transformedFlightTestOutputTopic;
+    private TestOutputTopic<String, AirportKpi> airportKpiOutputTopic;
+    private TestInputTopic<String, AirportUpdateEvent> airportUpdateEventInputTopic;
+
     private SpecificAvroSerde specificAvroSerde;
 
     private TopologyTestDriver topologyTestDriver;
@@ -53,14 +60,25 @@ public class TopologyTest {
                 stringSerde.serializer(),
                 specificAvroSerde.serializer()
         );
+
+        airportUpdateEventInputTopic = topologyTestDriver.createInputTopic(
+                properties.getProperty("kafka.topic.airport.update.events"),
+                stringSerde.serializer(), this.specificAvroSerde.serializer()
+        );
     }
 
     public void createOutputTopics() {
+
+        airportKpiOutputTopic = topologyTestDriver.createOutputTopic(
+                "radar.airports.kpi",
+                stringSerde.deserializer(), specificAvroSerde.deserializer()
+        );
 
         transformedFlightTestOutputTopic = topologyTestDriver.createOutputTopic(
                 properties.getProperty("kafka.topic.radar.flights"),
                 stringSerde.deserializer(), specificAvroSerde.deserializer()
         );
+
 
     }
 
@@ -68,6 +86,24 @@ public class TopologyTest {
     public void tearDown() {
         topologyTestDriver.close();
     }
+
+    @Test
+    public void shouldPublishAirportKpi() throws InterruptedException {
+
+        AirportUpdateEvent airportUpdateEvent1 = new AirportUpdateEvent("Flugplatz Bautzen", "Bautzen", "Germany", "EDAB", 51.193611, 14.519722, "dss");
+        AirportUpdateEvent airportUpdateEvent2 = new AirportUpdateEvent("Altenburg-Nobitz Airport", "Altenburg", "Germany", "EDAC", 52.193611, 17.519722, "dss");
+
+        FlightUpdateEvent flightUpdateEvent =  new FlightUpdateEvent("47876d11-77e8-3d84-8a72-46bf7a093aa2", "2023-04-05", "Bautzen/Germany(EDAB)->Altenburg/Germany(EDAC)", Instant.now().toEpochMilli(), Instant.now().plus(Duration.ofMinutes(70L)).toEpochMilli(), "Europe/Bautzen->Europe/Altenburg", "LANDED", "478", "47876d");
+
+        topologyTestDriver.advanceWallClockTime(Duration.ofMinutes(8));
+
+
+        airportUpdateEventInputTopic.pipeInput(airportUpdateEvent1.getCode().toString(), airportUpdateEvent1);
+        airportUpdateEventInputTopic.pipeInput(airportUpdateEvent2.getCode().toString(), airportUpdateEvent2);
+        flightUpdateEventTestInputTopic.pipeInput(flightUpdateEvent.getId().toString(),flightUpdateEvent);
+        airportKpiOutputTopic.readKeyValue();
+    }
+
 
     @Test
     public void shouldProduceFlightEventIntoTransformedFlightTestOutputTopic() {
@@ -163,5 +199,4 @@ public class TopologyTest {
 
         return flightUpdateEvent;
     }
-
 }
