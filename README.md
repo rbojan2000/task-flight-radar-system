@@ -12,26 +12,7 @@
 The Flight Radar task involves collecting and analyzing real-time Europe flight
 data using a streaming platform.  The goal of this task is to create a system
 that can process large amounts of flight data in real-time and provide useful
-insights, such as flight status, delays, etc.  The system must be able to handle
-streaming data, which requires a robust and scalable architecture.
-
-## Getting Started
-
-Besides chosen language and tools for stream-processing job, you will need
-`docker` and `docker-compose`.
-
-Initialize Kafka cluster & start flight producer with
-
-```bash
-docker-compose up -d
-```
-
-Provided `docker-compose.yml` will setup:
-
-- Apache Kafka cluster with single broker
-- Schema Registry with Avro support
-- Required Kafka topics
-- Event generator application
+insights, such as flight status, delays, etc.
 
 ### System Entities
 
@@ -70,24 +51,11 @@ columns are shown in table below:
 
 ### Generator
 
-Event generator application starts up with `docker-compose` and produces seeded
-events to the following topics:
-
 - `radar.airport.update.events`
   - key = `code: string`, value = [AirportUpdateEvent](flight-radar/src/main/avro/radar.AirportUpdateEvent.avsc)
 - `radar.flight.update.events`
   - key = `id: string`, value = [FlightUpdateEvent](flight-radar/src/main/avro/radar.FlightUpdateEvent.avsc)
 
-## Tasks
-
-Task is to build a streaming application that reads input topics and performs
-transformations described below.  The results of these tasks should be two
-output topics:
-
-- `radar.airports.kpi`
-  - key = `airportCode: string`, value = `AirportKpi` Avro message
-- `radar.flights`
-  - key = `flightId: string`, value = `Flight` Avro message
 
 ### 1. Transformation of Flight update events
 
@@ -133,47 +101,10 @@ following KPIs using starting destination as the point of view.
 | `minFlightDuration`           | Minimal flight duration in minutes                                                               |
 | `lastDepartureTimestamp`      | Latest departure timestamp in UTC.                                                               |
 
-Events outside of 5 minute windows period should be ignored.  
-
-### 3. Bonus
+Events outside of 5 minute windows period should be ignored. 
 
 Reduce number of output messages on topic `radar.airports.kpi`. Wait for amount
 of time (30 seconds) before emitting the aggregation result.
-
-## Deliverables
-
-- Working or even non-working code sent in zip archive or shared via git repository
-- Code should be written in Java, Python or Scala
-- Solution can include any stream processing engine but the following are preferred:
-  - Apache Kafka Streams
-  - Apache Spark Streaming
-  - Apache Flink
-  - Low-level Kafka Consumer / Producer API
-- Code should contain README file that explains the approach and how to run the applications
-- Deployment and cleanup should be as simple as possible
-
-## General Advice
-
-- Use common sense
-- Keep things simple
-- It’s much better to have a working solution than the perfect, but not working solution
-
-## Evaluation Criteria
-
-The top is the most important:
-
-- Finished working sample (usable job with clear instructions how to run and use)
-- Code quality
-- Design quality (proper abstractions)
-- Tests
-- Performance
-- Documented code (when it’s relevant)
-
-Remember that simple is better than complex, and complex is better than
-complicated.
-
-Good luck & have fun!
-
 
 
 # Flight Tracker
