@@ -139,6 +139,3 @@ Flight Tracker is a solution based on stream processing using Apache Kafka Strea
 7. Cancellation Analysis:
  - Calculate the percentage of canceled flights for each airline.
 
-
-Calculate the average duration of flights for each airline.
-Identify airlines with the shortest and longest average flight durations.
