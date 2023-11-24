@@ -10,7 +10,7 @@
 
 # Flight Radar
 
-The Flight Radar task involves collecting and analyzing real-time Europe flight
+The Flight Radar app involves collecting and analyzing real-time Europe flight
 data using a streaming platform.  The goal of this task is to create a system
 that can process large amounts of flight data in real-time and provide useful
 insights, such as flight status, delays, etc.
@@ -60,8 +60,8 @@ columns are shown in table below:
 
 ### 1. Transformation of Flight update events
 
-Flight update events read from topic `radar.flight.update.events` should be
-transformed to follow Avro schema:
+Flight update events read from topic `radar.flight.update.events`
+transform flights to follow FlightUpdateEvent Avro schema:
 
 | Column                 | Description                                                                   |
 |------------------------|-------------------------------------------------------------------------------|
@@ -78,8 +78,6 @@ transformed to follow Avro schema:
 | `status`               | Status of the flight.                                                         |
 | `gate`                 | Flight's gate identifier.                                                     |
 | `airline`              | Name of the airline company.                                                  |
-
-- Define Avro schema for Flight entity that is the results of transformations listed above.
 
 Transformed flights should be published to the output topic `radar.flights`.
 **Canceled flights should be ignored**
@@ -112,7 +110,9 @@ of time (30 seconds) before emitting the aggregation result.
 
 Flight Tracker is a solution based on stream processing using Apache Kafka Streams. It provides real-time tracking and processing of flight update events, along with the ability to calculate Airport KPIs (Key Performance Indicators).
 
+
 # Flight Report
+
 1. On-time Performance Analysis:
  - Calculate the percentage of flights that were on time (SCHEDULED) versus delayed (LATE) for each airline.
  - Identify airlines with the best and worst on-time performance.
