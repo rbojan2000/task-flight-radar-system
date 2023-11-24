@@ -5,6 +5,7 @@
   * [Implemented tasks](#implemented-tasks)
   * [Scalling application](#scaling-application)
   * [Starting application](#starting-application)
+* [Flight Report](#flight-report)
 
 
 # Flight Radar
@@ -111,3 +112,33 @@ of time (30 seconds) before emitting the aggregation result.
 
 Flight Tracker is a solution based on stream processing using Apache Kafka Streams. It provides real-time tracking and processing of flight update events, along with the ability to calculate Airport KPIs (Key Performance Indicators).
 
+# Flight Report
+1. On-time Performance Analysis:
+ - Calculate the percentage of flights that were on time (SCHEDULED) versus delayed (LATE) for each airline.
+ - Identify airlines with the best and worst on-time performance.
+
+2. Busiest Airports:
+ - Determine the top 10 busiest airports based on the number of flights departing or arriving
+
+3. Flight Duration Analysis:
+ - Calculate the average duration of flights for each airline.
+ - Identify airlines with the shortest and longest average flight durations.
+
+4. Aerodrom Gate Utilization:
+ - Determine the average number of flights per gate.
+ - Identify gates that are frequently used and those that are underutilized.
+
+5. Route Analysis:
+ - Identify the most common flight routes based on start and end places.
+ - Analyze the average delay time for each route.
+
+6. Airline Comparison:
+ - Compare the on-time performance of different airlines.
+ - Create a ranking of airlines based on their overall performance.
+
+7. Cancellation Analysis:
+ - Calculate the percentage of canceled flights for each airline.
+
+
+Calculate the average duration of flights for each airline.
+Identify airlines with the shortest and longest average flight durations.
